@@ -11,9 +11,43 @@ p {
 .recentUsers {
   width: 160px;
   overflow: hidden;
+  height: 206px;
   margin-left: 20px;
+  display: grid;
+  grid-template-rows: 160px 46px;
   background-color: white;
-  outline: 1px solid #dddfe2;
+  border: 1px solid #dddfe2;
+  border-radius: 4px;
+  &:hover {
+    box-shadow: 0px 0px 8px;
+    transition: all .2s ease-out;
+    cursor: pointer;
+  }
+  h2 {
+    justify-self: center;
+    align-self: center;
+    margin-left: 10px;
+    padding: 12px;
+    font-size: 18px;
+    color: #4B4F56
+  }
+  img {
+    height: 160px;
+    width: 160px;
+    background-color: $fbLightGray;
+  }
+}
+
+.addAccount {
+  width: 160px;
+  overflow: hidden;
+  margin-left: 20px;
+  height: 206px;
+  display: grid;
+  grid-template-rows: 160px 46px;
+  background-color: white;
+  border: 1px solid #dddfe2;
+  border-radius: 4px;
   &:hover {
     box-shadow: 0px 0px 8px;
     transition: all .2s ease-out;
@@ -26,13 +60,19 @@ p {
     font-size: 18px;
     color: #4B4F56
   }
-  img {
-    height: 160px;
-    width: auto;
+  .imageHolder{
+    display: grid;
     background-color: $fbLightGray;
+    img {
+      display: grid;
+      justify-self: center;
+      align-self: center;
+      height: 50px;
+      width: auto;
+      background-color: $fbLightGray;
+    }
   }
 }
-
 .all {
   display: flex;
   flex-wrap: wrap;

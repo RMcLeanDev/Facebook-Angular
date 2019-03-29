@@ -17,6 +17,7 @@ form {
     outline: $outline;
     height: 21px;
     width: 150px;
+    border: none;
     &::placeholder {
       padding-left: 10px;
     }
@@ -36,6 +37,7 @@ form {
     outline: $outline;
     height: 21px;
     width: 150px;
+    border: none;
     &::placeholder {
       padding-left: 10px;
     }
@@ -54,6 +56,7 @@ form {
 button {
   background-color: #4267B2;
   outline: 1px solid rgba(0,0,0,0.4);
+  border: none;
   height: 24px;
   width: 50px;
   align-self: center;
