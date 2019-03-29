@@ -42,5 +42,16 @@ $fbBlue: #365889;
       padding: 0;
       color: $fbGray;
     }
+    .createPageBand {
+      margin-top: 20px;
+      padding-bottom: 30px;
+      .blues {
+        color: $fbBlue;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
