@@ -1,0 +1,64 @@
+$border: 1px solid black;
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.username {
+  display: grid;
+  align-self: center;
+  margin-bottom: 17px;
+  margin-right: 10px;
+  color: white;
+  font-size: 13px;
+  label{
+    margin-bottom: 5px;
+  }
+  input {
+    border: $border;
+    height: 24px;
+    width: 150px;
+    &::placeholder {
+      padding-left: 10px;
+    }
+  }
+}
+.password {
+  display: grid;
+  align-self: center;
+  margin-right: 10px;
+  color: white;
+  margin-bottom: 5px;
+  font-size: 13px;
+  label {
+    margin-bottom: 5px;
+  }
+  input {
+    border: $border;
+    height: 24px;
+    width: 150px;
+    &::placeholder {
+      padding-left: 10px;
+    }
+  }
+  p {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+button {
+  background-color: #4267B2;
+  border: 1px solid rgba(0,0,0,0.4);
+  height: 24px;
+  width: 50px;
+  align-self: center;
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+}

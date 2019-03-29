@@ -6,14 +6,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   top: 0;
+  border-bottom: 1px solid black;
   h1 {
     margin-left: 33px;
     align-self: center;
     font-size: 45px;
     margin-top: 17px;
+    color: white;
   }
   app-login-header {
-    justify-self: center;
+    justify-self: end;
     align-self: center;
   }
 }
