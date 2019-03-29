@@ -1,12 +1,12 @@
 $border: 1px solid black;
 form {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 100px;
 }
 .username {
   display: grid;
   align-self: center;
-  margin-bottom: 17px;
+  margin-bottom: 18px;
   margin-right: 10px;
   color: white;
   font-size: 13px;
@@ -15,7 +15,7 @@ form {
   }
   input {
     border: $border;
-    height: 24px;
+    height: 21px;
     width: 150px;
     &::placeholder {
       padding-left: 10px;
@@ -34,7 +34,7 @@ form {
   }
   input {
     border: $border;
-    height: 24px;
+    height: 21px;
     width: 150px;
     &::placeholder {
       padding-left: 10px;
