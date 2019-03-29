@@ -2,10 +2,14 @@ $fbGray: #333333;
 $fbBlue: #365889;
 $fbLightGray: #F5F6F7;
 $border: #bdc7d8;
+$btnColor: #69A74E;
+$btnDark: #588c41;
 form {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgray;
 }
 input[name=name]{
   width: 48%;
@@ -59,7 +63,7 @@ input[name=dob] {
   }
   p {
     align-self: center;
-    font-size: 11px;
+    font-size: 13px;
     margin-left: 10px;
     color: $fbBlue;
     &:hover {
@@ -69,10 +73,55 @@ input[name=dob] {
   }
 }
 .genderInput{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  input {
-  }
+  display: flex;
+  width: 100%;
   label {
+    font-size: 18px;
+  }
+  input {
+    margin: 0;
+    margin-right: 10px;
+  }
+  .femaleInput{
+    display: flex;
+    align-self: center;
+    margin-right: 20px;
+    label {
+      align-self: center;
+    }
+  }
+  .maleInput{
+    display: flex;
+    align-self: center;
+    label {
+      align-self: center;
+    }
+  }
+}
+.disclaimer {
+  font-size: 13px;
+  color: $fbGray;
+  .blue {
+    color: $fbBlue;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+button {
+  background-color: $btnColor;
+  border-radius: 5px;
+  width: 50%;
+  height: 40px;
+  border: 1px solid $btnDark;
+  color: white;
+  font-size: 20px;
+  text-shadow: 0px 0px 5px black;
+  &:hover {
+    opacity: .8;
+    background-color: $fbBlue;
+    transition: .5s ease-in-out;
+    cursor: pointer;
   }
 }
