@@ -1,3 +1,3 @@
 export class User {
-  constructor(public username: string, public password: string) {}
+  constructor(public ImageUrl: string, public username: string, public password: string) {}
 }

@@ -21,5 +21,10 @@
 }
 .main-login {
   background-color: #E9EBEE;
-  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  app-recent-logins {
+    justify-self: center;
+    margin-top: 20px;
+  }
 }
