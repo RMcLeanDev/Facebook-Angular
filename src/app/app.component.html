@@ -3,7 +3,7 @@
   <app-login-header></app-login-header>
 </div>
 <div class="main-login">
-  <img *ngFor="let recentLogin of masterRecentLogins" src="{{recentLogin.image}}" alt="">
+  <img src="../assets/images/dragon.png" alt="">
   <p>{{masterRecentLogins[0].username}}</p>
   <app-recent-logins [childRecentLogins]="masterRecentLogins"></app-recent-logins>
 </div>
