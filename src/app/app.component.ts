@@ -1,7 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 import { User } from './model/login.model';
-
-
+import { DomSanitizer } from '@angular/platform-browser';
+@Pipe({
+  name: "default"
+})
+class DefaultPipe {
+  transform(value: string) {
+    let image = '';
+    if (value){
+      image = value;
+    } else {}
+    return image
+  }
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,8 +21,10 @@ import { User } from './model/login.model';
 
 export class AppComponent {
   masterRecentLogins: User[] = [
-    new User(new URL("../dragon.png"), 'username', 'password'),
+    new User('img/dragon.png', 'username', 'password'),
     new User(null, 'ryan', 'ryan'),
   ];
 
 }
+let app = new AppComponent;
+console.log(app.masterRecentLogins[0].image)
