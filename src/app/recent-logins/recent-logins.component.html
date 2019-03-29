@@ -1,5 +1,7 @@
 <h1>Recent Logins</h1>
 <p>Click your picture or add an account.</p>
 <div class="recentUsers">
-  <img src="" alt="">
+  <ul>
+    <li *ngFor="let recentLogin of childRecentLogins">{{recentLogin.image}}</li>
+  </ul>
 </div>

@@ -10,7 +10,8 @@ import { User } from './model/login.model';
 
 export class AppComponent {
   masterRecentLogins: User[] = [
-    new User(null, 'username', 'password')
+    new User(new URL("../dragon.png"), 'username', 'password'),
+    new User(null, 'ryan', 'ryan'),
   ];
 
 }

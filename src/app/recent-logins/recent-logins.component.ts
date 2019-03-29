@@ -5,11 +5,8 @@ import { User } from './../model/login.model';
   templateUrl: './recent-logins.component.html',
   styleUrls: ['./recent-logins.component.scss']
 })
-export class RecentLoginsComponent implements OnInit {
-  @Input() = childRecentLogins: User[];
+export class RecentLoginsComponent {
   constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() childRecentLogins: User[];
 
 }
