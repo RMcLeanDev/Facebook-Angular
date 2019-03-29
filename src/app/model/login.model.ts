@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+
 export class User {
-  constructor(public ImageUrl: string, public username: string, public password: string) {}
+  constructor(public ImageUrl: HttpClient, public username: string, public password: string) {}
 }

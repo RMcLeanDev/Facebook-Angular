@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from './../model/login.model';
 @Component({
   selector: 'app-recent-logins',
   templateUrl: './recent-logins.component.html',
   styleUrls: ['./recent-logins.component.scss']
 })
 export class RecentLoginsComponent implements OnInit {
-
+  @Input() = childRecentLogins: User[];
   constructor() { }
 
   ngOnInit() {
