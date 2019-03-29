@@ -21,8 +21,8 @@ class DefaultPipe {
 
 export class AppComponent {
   masterRecentLogins: User[] = [
-    new User('img/dragon.png', 'username', 'password'),
-    new User(null, 'ryan', 'ryan'),
+    new User('assets/images/dragon.png', 'username', 'password'),
+    new User('assets/images/lk.png', 'ryan', 'ryan'),
   ];
 
 }
