@@ -1,0 +1,44 @@
+$fbGray: #333333;
+$fbBlue: #365889;
+$fbLightGray: #F5F6F7;
+$border: #bdc7d8;
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+input[name=name]{
+  width: 47%;
+  height: 38px;
+  margin-right: 1%;
+  &::placeholder {
+    padding-left: 10px;
+    font-size: 15px;
+  }
+}
+input {
+  margin-top: 10px;
+  border: none;
+  border: 1px solid $border;
+  border-radius: 6px;
+  font-size: 15px;
+  height: 38px;
+}
+input[name=mobile] {
+  width: 96%;
+  &::placeholder {
+    padding-left: 10px;
+    font-size: 15px;
+  }
+}
+input[name=password] {
+  width: 96%;
+  &::placeholder {
+    padding-left: 10px;
+    font-size: 15px;
+  }
+}
+
+p {
+  font-size: 18px;
+}

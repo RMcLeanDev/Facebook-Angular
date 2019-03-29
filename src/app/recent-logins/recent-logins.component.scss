@@ -12,14 +12,14 @@ p {
   width: 160px;
   overflow: hidden;
   height: 206px;
-  margin-left: 20px;
+  margin-right: 20px;
   display: grid;
   grid-template-rows: 160px 46px;
   background-color: white;
   border: 1px solid #dddfe2;
   border-radius: 4px;
   &:hover {
-    box-shadow: 0px 0px 8px;
+    box-shadow: 0px 0px 8px $fbGray;
     transition: all .2s ease-out;
     cursor: pointer;
   }
@@ -41,7 +41,7 @@ p {
 .addAccount {
   width: 160px;
   overflow: hidden;
-  margin-left: 20px;
+  margin-right: 20px;
   height: 206px;
   display: grid;
   grid-template-rows: 160px 46px;
@@ -49,7 +49,7 @@ p {
   border: 1px solid #dddfe2;
   border-radius: 4px;
   &:hover {
-    box-shadow: 0px 0px 8px;
+    box-shadow: 0px 0px 8px $fbGray;
     transition: all .2s ease-out;
     cursor: pointer;
   }
@@ -58,7 +58,7 @@ p {
     padding: 12px;
     margin: 0;
     font-size: 18px;
-    color: #4B4F56
+    color: #365889
   }
   .imageHolder{
     display: grid;

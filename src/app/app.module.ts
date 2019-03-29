@@ -6,13 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginHeaderComponent } from './login-header/login-header.component';
 import { RecentLoginsComponent } from './recent-logins/recent-logins.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginHeaderComponent,
-    RecentLoginsComponent
+    RecentLoginsComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,
