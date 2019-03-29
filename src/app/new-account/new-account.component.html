@@ -4,20 +4,20 @@
     <input type="text" name="name" placeholder="Last Name">
     <input type="text" name="mobile" placeholder="Mobile Number or Email">
     <input type="password" name="password" placeholder="New Password">
-    <div class="birthday">
-      <p>Birthday</p>
-      <select class="month" name="month">
-        <option value="null">Month</option>
-        <option value="January">Jan</option>
-        <option value="February">Feb</option>
-        <option value="March">Mar</option>
-        <option value="April">Apr</option>
-        <option value="May">May</option>
-        <option value="June">Jun</option>
-        <option value="July">Jul</option>
-        <option value="August">Aug</option>
-        <option value="September">Sep</option>
-      </select>
+    <p class="birthday">Birthday</p>
+    <div class="dobInput">
+      <input type="date" name="dob" value="dob">
+      <p>Why do I need to provide my birthday?</p>
+    </div>
+    <div class="genderInput">
+      <div class="female">
+        <input type="radio" name="gender" value="female">
+        <label for="gender">Female</label>
+      </div>
+      <div class="male">
+        <input type="radio" name="gender" value="male">
+        <label for="gender">Male</label>
+      </div>
     </div>
   </form>
 </div>
