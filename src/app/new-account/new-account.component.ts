@@ -26,6 +26,9 @@ export class NewAccountComponent {
       age--;
     }
     const finalAge = age;
+    if (finalAge < 13){
+      return alert("You must be over the age of 13 to create a account");
+    }
     if (gender === 'female') {
       this.profileImage = 'assets/images/fbgirl160.jpeg';
     } else if (gender === 'male') {
