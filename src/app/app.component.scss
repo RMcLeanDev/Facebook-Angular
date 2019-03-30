@@ -26,6 +26,7 @@ $fbBlue: #365889;
   background-color: #E9EBEE;
   display: grid;
   grid-template-columns: 60% 38% 2%;
+  grid-gap: 20px;
   app-recent-logins {
     justify-self: center;
     margin-top: 20px;
