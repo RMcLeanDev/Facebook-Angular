@@ -24,7 +24,9 @@ export class AppComponent {
     new User('assets/images/dragon.png', 'username', 'password'),
     new User('assets/images/lk.png', 'ryan', 'ryan'),
   ];
-
+  addUser(newUser: User){
+    this.masterRecentLogins.push(newUser);
+  }
 }
 let app = new AppComponent;
 console.log(app.masterRecentLogins[0].image)

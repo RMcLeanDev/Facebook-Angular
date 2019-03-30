@@ -7,7 +7,7 @@
   <div class="newAccount">
     <h1>Create a New Account</h1>
     <p>It's free and always will be.</p>
-    <app-new-account [childNewAccount]="masterRecentLogins"></app-new-account>
+    <app-new-account (sendUser)="addUser($event)"></app-new-account>
     <p class="createPageBand"><span class="blues">Creat a Page</span> for a celebrity, band or business.</p>
   </div>
 </div>

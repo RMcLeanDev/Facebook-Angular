@@ -4,7 +4,7 @@ $fbLightGray: #F5F6F7;
 $border: #bdc7d8;
 $btnColor: #69A74E;
 $btnDark: #588c41;
-form {
+form{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -12,9 +12,9 @@ form {
   border-bottom: 1px solid lightgray;
 }
 input[name=name]{
-  width: 48%;
+  width: 47%;
   height: 38px;
-  margin-right: 1%;
+  margin-right: 2%;
   &::placeholder {
     padding-left: 10px;
     font-size: 15px;
@@ -29,14 +29,14 @@ input {
   height: 38px;
 }
 input[name=mobile] {
-  width: 98%;
+  width: 97%;
   &::placeholder {
     padding-left: 10px;
     font-size: 15px;
   }
 }
 input[name=password] {
-  width: 98%;
+  width: 97%;
   &::placeholder {
     padding-left: 10px;
     font-size: 15px;

@@ -1,12 +1,12 @@
 <div class="addNewAccount">
-  <form class="form">
-    <input type="text" name="name" placeholder="First Name">
+  <form class="forms">
+    <input type="text" id="firstName" name="name" placeholder="First Name">
     <input type="text" name="name" placeholder="Last Name">
     <input type="text" name="mobile" placeholder="Mobile Number or Email">
-    <input type="password" name="password" placeholder="New Password">
+    <input type="password" id="newPassword" name="password" placeholder="New Password">
     <p class="birthday">Birthday</p>
     <div class="dobInput">
-      <input type="date" name="dob" value="dob">
+      <input type="date">
       <p>Why do I need to provide my birthday?</p>
     </div>
     <div class="genderInput">
@@ -20,6 +20,6 @@
       </div>
     </div>
     <p class="disclaimer">By clicking Sign Up, you agree to our <span class="blue">Terms, Data Policy</span> and <span class="blue">Cookies Policy</span>. You may recieve SMS Notifications from us and can opt out any time.</p>
-    <button type="submit" name="button"><b>Sign Up</b></button>
+    <button type="submit" name="button" (click)="addNewAccount(firstName.value, newPassword.value)"><b>Sign Up</b></button>
   </form>
 </div>

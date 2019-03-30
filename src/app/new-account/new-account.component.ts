@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from './../model/login.model';
 
 @Component({
@@ -6,11 +6,15 @@ import { User } from './../model/login.model';
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.scss']
 })
-export class NewAccountComponent implements OnInit {
+export class NewAccountComponent {
   @Input() childNewAccount: User[];
+  @Output() sendUser = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
+  addNewAccount(name: string, newPassword: string){
+    let newUser: User = new User(null, name, newPassword);
+    console.log(newUser);
+    this.sendUser.emit(newUser);
   }
 
 }
