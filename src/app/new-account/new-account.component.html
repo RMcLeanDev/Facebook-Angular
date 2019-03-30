@@ -12,14 +12,14 @@
   </div>
   <div class="genderInput">
     <div class="femaleInput">
-      <input type="radio" [(ngModel)]="result" name="gender"  value="female">
+      <input type="radio" [(ngModel)]="gender" name="gender"  value="female">
       <label for="gender">Female</label>
     </div>
     <div class="maleInput">
-      <input type="radio" [(ngModel)]="result" name="gender" value="male">
+      <input type="radio" [(ngModel)]="gender" name="gender" value="male">
       <label for="gender">Male</label>
     </div>
   </div>
   <p class="disclaimer">By clicking Sign Up, you agree to our <span class="blue">Terms, Data Policy</span> and <span class="blue">Cookies Policy</span>. You may recieve SMS Notifications from us and can opt out any time.</p>
-  <button type="submit" name="button" (click)="addNewAccount(firstName.value, newPassword.value, result)"><b>Sign Up</b></button>
+  <button type="submit" name="button" (click)="addNewAccount(firstName.value, newPassword.value, gender)"><b>Sign Up</b></button>
 </div>
