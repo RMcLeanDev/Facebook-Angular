@@ -5,16 +5,20 @@ $border: #bdc7d8;
 $btnColor: #69A74E;
 $btnDark: #588c41;
 form{
-  width: 100%;
+  width: 400px;
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 20px;
   border-bottom: 1px solid lightgray;
+  .firstLast {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 input[name=name]{
-  width: 47%;
+  width: 190px;
   height: 38px;
-  margin-right: 2%;
   &::placeholder {
     padding-left: 10px;
     font-size: 15px;
@@ -29,14 +33,14 @@ input {
   height: 38px;
 }
 input[name=mobile] {
-  width: 97%;
+  width: 100%;
   &::placeholder {
     padding-left: 10px;
     font-size: 15px;
   }
 }
 input[name=password] {
-  width: 97%;
+  width: 100%;
   &::placeholder {
     padding-left: 10px;
     font-size: 15px;
