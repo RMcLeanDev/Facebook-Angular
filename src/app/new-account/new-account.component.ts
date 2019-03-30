@@ -14,15 +14,18 @@ export class NewAccountComponent {
   submitResult(result){
     console.log(result);
   }
+  
+  profileImage: string = '';
+
   addNewAccount(name: string, newPassword: string, gender: string){
     if (gender === 'female') {
-      let profileImage = 'assets/images/fbgirl160.jpeg';
+      this.profileImage = 'assets/images/fbgirl160.jpeg';
     } else if (gender === 'male') {
-      let profileImage = 'assets/images/fbguy160.jpg';
+      this.profileImage = 'assets/images/fbguy160.jpg';
     } else {
       return alert("Please Select a Gender");
     }
-    let newUser: User = new User(profileImage, name, newPassword, gender);
+    let newUser: User = new User(this.profileImage, name, newPassword, gender);
     console.log(newUser);
     this.sendUser.emit(newUser);
   }
