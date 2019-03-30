@@ -14,10 +14,18 @@ export class NewAccountComponent {
   submitResult(result){
     console.log(result);
   }
-  
+
   profileImage: string = '';
 
-  addNewAccount(name: string, newPassword: string, gender: string){
+  addNewAccount(name: string, newPassword: string, date: string, gender: string){
+    const today = new Date();
+    const birthday = new Date(date);
+    let age = today.getFullYear() - birthday.getFullYear();
+    const m = today.getMonth() - birthday.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+      age--;
+    }
+    const finalAge = age;
     if (gender === 'female') {
       this.profileImage = 'assets/images/fbgirl160.jpeg';
     } else if (gender === 'male') {
@@ -25,7 +33,7 @@ export class NewAccountComponent {
     } else {
       return alert("Please Select a Gender");
     }
-    let newUser: User = new User(this.profileImage, name, newPassword, gender);
+    let newUser: User = new User(this.profileImage, name, newPassword, gender, finalAge);
     console.log(newUser);
     this.sendUser.emit(newUser);
   }
