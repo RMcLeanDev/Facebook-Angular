@@ -1,12 +1,12 @@
 <form>
   <div class="username">
     <label>Email or Phone</label>
-    <input type="text" placeholder="Username">
+    <input #username type="text" placeholder="Username">
   </div>
   <div class="password">
     <label>Password</label>
-    <input type="text" placeholder="Password">
+    <input #password type="password" placeholder="Password">
     <p>Forgot Account?</p>
   </div>
-  <button type="submit" name="button"><b>Login</b></button>
+  <button type="submit" (click)="login(username.value, password.value)"><b>Login</b></button>
 </form>

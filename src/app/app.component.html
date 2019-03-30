@@ -1,6 +1,6 @@
 <div class="login-header">
   <h1>facebook</h1>
-  <app-login-header></app-login-header>
+  <app-login-header (sendLogin)="login($event)"></app-login-header>
 </div>
 <div class="main-login">
   <app-recent-logins [childRecentLogins]="masterRecentLogins"></app-recent-logins>

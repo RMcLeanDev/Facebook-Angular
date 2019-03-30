@@ -27,6 +27,14 @@ export class AppComponent {
   addUser(newUser: User){
     this.masterRecentLogins.push(newUser);
   }
+  login(loginUser: User){
+    console.log("app component login function reached");
+    for (let i = 0; i < this.masterRecentLogins.length; i++){
+      if (loginUser.username === this.masterRecentLogins[i].username && loginUser.password === this.masterRecentLogins[i].password){
+        alert("You have logged in!")
+      } else {}
+    }
+  }
 }
 let app = new AppComponent;
 console.log(app.masterRecentLogins[0].image)
