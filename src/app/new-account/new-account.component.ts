@@ -8,7 +8,6 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms'
   styleUrls: ['./new-account.component.scss']
 })
 export class NewAccountComponent {
-  @Input() childNewAccount: User[];
   @Output() sendUser = new EventEmitter();
   constructor() { }
   submitResult(result){
@@ -20,6 +19,9 @@ export class NewAccountComponent {
   addNewAccount(name: string, newPassword: string, date: string, gender: string){
     const today = new Date();
     const birthday = new Date(date);
+    if (birthday == "Invalid Date"){
+      return alert("Please check to make sure your birthday is in proper format")
+    }
     let age = today.getFullYear() - birthday.getFullYear();
     const m = today.getMonth() - birthday.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
