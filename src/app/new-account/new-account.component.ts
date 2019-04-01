@@ -8,6 +8,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms'
   styleUrls: ['./new-account.component.scss']
 })
 export class NewAccountComponent {
+  @Input() childNewAccount: User[];
   @Output() sendUser = new EventEmitter();
   constructor() { }
   submitResult(result){
@@ -15,6 +16,7 @@ export class NewAccountComponent {
   }
 
   profileImage: string = '';
+  profileId: number = 0;
 
   addNewAccount(name: string, newPassword: string, date: string, gender: string){
     const today = new Date();
@@ -35,7 +37,10 @@ export class NewAccountComponent {
     } else {
       return alert("Please Select a Gender");
     }
-    let newUser: User = new User(this.profileImage, name, newPassword, gender, finalAge, false);
+    for (let i=0;i<this.childNewAccount.length; i++){
+      if (this.profileId == this.childNewAccount[i])
+    }
+    let newUser: User = new User(id, this.profileImage, name, newPassword, gender, finalAge, false);
     console.log(newUser);
     this.sendUser.emit(newUser);
     alert("Thank you for making a account you can now log in");

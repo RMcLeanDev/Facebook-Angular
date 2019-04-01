@@ -11,11 +11,12 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.masterAccounts);
   }
 
   masterAccounts: User[] = [
-    new User('assets/images/dragon.png', 'username', 'password', 'male', 23, true),
-    new User('assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
+    new User(1, 'assets/images/dragon.png', 'username', 'password', 'male', 23, true),
+    new User(2, 'assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
   ];
   addUser(newUser: User){
     this.masterAccounts.push(newUser);
@@ -28,7 +29,6 @@ export class HomeComponent implements OnInit {
       if (loginUser.username === this.masterAccounts[i].username && loginUser.password === this.masterAccounts[i].password){
         this.masterAccounts[i].recentLogin = true;
         this.recentLogins.push(this.masterAccounts[i]);
-        console.log(this.masterAccounts[i]);
         console.log(this.recentLogins);
         return alert("You have logged in!")
       } else {console.log("not able to log in")}

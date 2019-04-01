@@ -10,8 +10,8 @@ export class LoginHeaderComponent {
   @Output() sendLogin = new EventEmitter();
   constructor() { }
 
-  login(username: string, password: string){
-    let loginUser = new User(null, username, password, null, null, null);
+  login(username: string, password: string,){
+    let loginUser = new User(null, null, username, password, null, null, null);
     console.log("login function reached");
     this.sendLogin.emit(loginUser);
   }

@@ -2,6 +2,7 @@
 <p>Click your picture or add an account.</p>
 <div class="all">
   <div *ngFor="let recentLogin of childRecentLogins" class="recentUsers">
+    <button (click)="deleteThis(recentLogin)">X</button>
     <img src="{{recentLogin.image}}" alt="">
     <h2>{{recentLogin.username}}</h2>
   </div>
