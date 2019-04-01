@@ -1,26 +1,35 @@
 $outline: 1px solid black;
 form {
   display: grid;
-  grid-template-columns: 1fr 1fr 100px;
+  grid-template-columns: auto auto 100px;
 }
 .username {
   display: grid;
   align-self: center;
-  margin-bottom: 18px;
   margin-right: 10px;
   color: white;
   font-size: 13px;
+  margin-bottom: 5px;
   label{
     margin-bottom: 5px;
   }
   input {
     outline: $outline;
-    height: 21px;
-    width: 150px;
     border: none;
-    &::placeholder {
-      padding-left: 10px;
+    height: 21px;
+    width: 100px;
+    border: none;
+    padding-left: 10px;
+    transition: 1s ease-in-out;
+    &:focus{
+      width: 150px;
+      transition: 1s ease-in-out;
     }
+  }
+  .hide{
+    padding: 0;
+    margin: 0;
+    opacity: 0;
   }
 }
 .password {
@@ -35,11 +44,15 @@ form {
   }
   input {
     outline: $outline;
-    height: 21px;
-    width: 150px;
     border: none;
-    &::placeholder {
-      padding-left: 10px;
+    height: 21px;
+    width: 100px;
+    border: none;
+    padding-left: 10px;
+    transition: 1s ease-in-out;
+    &:focus{
+      width: 150px;
+      transition: 1s ease-in-out;
     }
   }
   p {

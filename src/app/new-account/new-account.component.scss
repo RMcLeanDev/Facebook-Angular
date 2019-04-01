@@ -46,11 +46,6 @@ input[name=password] {
     font-size: 15px;
   }
 }
-input[name=dob] {
-  margin: 0;
-  margin-top: 4px;
-  padding-left: 10px;
-}
 .birthday {
   width: 100%;
   font-size: 18px;
@@ -63,7 +58,9 @@ input[name=dob] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   input {
-    align-self: center;
+    margin: 0;
+    margin-top: 4px;
+    padding-left: 10px;
   }
   p {
     align-self: center;
