@@ -45,12 +45,15 @@ _Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github
 _Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/)._
 
 ##Screenshots
+
 ####Original site:
+
 ![Screenshots](src/assets/images/originalHome.png)
 ![Screenshots](src/assets/images/originalRecent.png)
 ![Screenshots](src/assets/images/originalCreateAccount.png)
 
 ####Built Site:
+
 ![Screenshots](src/assets/images/builtHome.png)
 ![Screenshots](src/assets/images/builtRecent.png)
 _I adjusted the animation that occurs from the original site when you hover one of the recent logins to look more appealing._
