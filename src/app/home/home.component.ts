@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
   }
 
   masterAccounts: User[] = [
-    new User(1, 'assets/images/dragon.png', 'username', 'password', 'male', 23, true),
-    new User(2, 'assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
+    new User(0, 'assets/images/dragon.png', 'username', 'password', 'male', 23, true),
+    new User(1, 'assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
   ];
   addUser(newUser: User){
     this.masterAccounts.push(newUser);
