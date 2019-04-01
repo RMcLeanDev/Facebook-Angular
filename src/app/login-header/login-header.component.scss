@@ -20,10 +20,9 @@ form {
     width: 100px;
     border: none;
     padding-left: 10px;
-    transition: 1s ease-in-out;
+    transition: 1s linear;
     &:focus{
       width: 150px;
-      transition: 1s ease-in-out;
     }
   }
   .hide{
@@ -49,10 +48,9 @@ form {
     width: 100px;
     border: none;
     padding-left: 10px;
-    transition: 1s ease-in-out;
+    transition: 1s linear;
     &:focus{
       width: 150px;
-      transition: 1s ease-in-out;
     }
   }
   p {

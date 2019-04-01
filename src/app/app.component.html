@@ -1,6 +1,15 @@
 <div class="welcome" *ngIf="disclaimer">
-  <div class="container">
+  <div class="mainContainer">
+    <h1>Welcome to my Facebook</h1>
+    <h2>This is still a work in progress all functionality is not yet set in place.</h2>
+    <h3>Current Functionality:</h3>
+    <ul>
+      <li>You can create an account and your username will be what you set your first name as and you password will be what you set your password as. You must be over the age of 13 to create a account and must select a gender</li>
+      <li>You can use the account you create to 'login'. At the moment it will only give you a alert that you have logged in. It wont take you to any page yet. There is also a fun little animation when you click on the username input and password input.</li>
+      <li>You can hover over the Recent Logins accounts to see a custom animation I put in place.</li>
+    </ul>
     <button (click)="hideDisclaimer()">Close</button>
+    <p class="disclaimer">Disclaimer: This webpage has no association with the real facebook webiste. If you would like to create a facebook account and or use facebook please go to <a href="https://www.facebook.com">Facebook</a>. Any adds you see displayed are not real adds just images I have downloaded to display. I AM NOT MAKING ANY MONEY FROM THIS WEBPAGE. </p>
   </div>
 </div>
 <router-outlet></router-outlet>
