@@ -56,9 +56,11 @@ _Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protra
 
 ![Screenshots](src/assets/images/builtHome.png)
 ![Screenshots](src/assets/images/builtRecent.png)
+
 _I adjusted the animation that occurs from the original site when you hover one of the recent logins to look more appealing._
 
 ![Screenshots](src/assets/images/builtCreateAccount.png)
+
 _I adjusted the birthday input to a calendar input so it's not three separate inputs but one._
 
 ## Known Bugs
