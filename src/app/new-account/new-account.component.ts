@@ -35,9 +35,10 @@ export class NewAccountComponent {
     } else {
       return alert("Please Select a Gender");
     }
-    let newUser: User = new User(this.profileImage, name, newPassword, gender, finalAge);
+    let newUser: User = new User(this.profileImage, name, newPassword, gender, finalAge, false);
     console.log(newUser);
     this.sendUser.emit(newUser);
+    alert("Thank you for making a account you can now log in");
   }
 
 }

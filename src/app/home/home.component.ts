@@ -13,20 +13,25 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  masterRecentLogins: User[] = [
-    new User('assets/images/dragon.png', 'username', 'password', 'male', 23),
-    new User('assets/images/lk.png', 'ryan', 'ryan', 'female', 18),
+  masterAccounts: User[] = [
+    new User('assets/images/dragon.png', 'username', 'password', 'male', 23, true),
+    new User('assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
   ];
   addUser(newUser: User){
-    this.masterRecentLogins.push(newUser);
+    this.masterAccounts.push(newUser);
   }
+  recentLogins: User[] = [];
+
   login(loginUser: User){
     console.log("app component login function reached");
-    for (let i = 0; i < this.masterRecentLogins.length; i++){
-      if (loginUser.username === this.masterRecentLogins[i].username && loginUser.password === this.masterRecentLogins[i].password){
+    for (let i = 0; i < this.masterAccounts.length; i++){
+      if (loginUser.username === this.masterAccounts[i].username && loginUser.password === this.masterAccounts[i].password){
+        this.masterAccounts[i].recentLogin = true;
+        this.recentLogins.push(this.masterAccounts[i]);
+        console.log(this.masterAccounts[i]);
+        console.log(this.recentLogins);
         return alert("You have logged in!")
       } else {console.log("not able to log in")}
     }
   }
-
 }

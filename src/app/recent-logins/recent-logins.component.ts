@@ -8,5 +8,5 @@ import { User } from './../model/login.model';
 export class RecentLoginsComponent {
   constructor() { }
   @Input() childRecentLogins: User[];
-
+  
 }

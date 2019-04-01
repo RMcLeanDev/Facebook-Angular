@@ -11,7 +11,7 @@ export class LoginHeaderComponent {
   constructor() { }
 
   login(username: string, password: string){
-    let loginUser = new User(null, username, password, null, null,);
+    let loginUser = new User(null, username, password, null, null, null);
     console.log("login function reached");
     this.sendLogin.emit(loginUser);
   }
