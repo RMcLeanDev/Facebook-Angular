@@ -31,8 +31,8 @@ export class AppComponent {
     console.log("app component login function reached");
     for (let i = 0; i < this.masterRecentLogins.length; i++){
       if (loginUser.username === this.masterRecentLogins[i].username && loginUser.password === this.masterRecentLogins[i].password){
-        alert("You have logged in!")
-      } else {}
+        return alert("You have logged in!")
+      } else {console.log("not able to log in")}
     }
   }
 }
