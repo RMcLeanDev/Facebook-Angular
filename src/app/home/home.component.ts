@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/login.model';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,8 @@ export class HomeComponent implements OnInit {
   }
 
   masterAccounts: User[] = [
-    new User(0, 'assets/images/dragon.png', 'username', 'password', 'male', 23, true),
-    new User(1, 'assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
+    new User('assets/images/dragon.png', 'username', 'password', 'male', 23, true),
+    new User('assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
   ];
   addUser(newUser: User){
     this.masterAccounts.push(newUser);

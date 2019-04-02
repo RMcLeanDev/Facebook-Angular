@@ -37,12 +37,7 @@ export class NewAccountComponent {
     } else {
       return alert("Please Select a Gender");
     }
-    for (let i=0;i<this.childNewAccount.length; i++){
-      if (i === this.childNewAccount[i].id){
-        this.profileId = i + 1;
-      }
-    }
-    let newUser: User = new User(this.profileId, this.profileImage, name, newPassword, gender, finalAge, false);
+    let newUser: User = new User(this.profileImage, name, newPassword, gender, finalAge, false);
     console.log(newUser);
     this.sendUser.emit(newUser);
     alert("Thank you for making a account you can now log in");
