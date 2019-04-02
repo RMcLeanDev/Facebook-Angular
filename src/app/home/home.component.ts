@@ -7,15 +7,16 @@ import { AppService } from '../app.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [AppService]
 })
 export class HomeComponent implements OnInit {
+  users: FirebaseListObservable<any[]>;
 
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, private appService: AppService) {}
 
   ngOnInit() {
     this.users = this.appService.getUsers();
-    console.log(this.users);
+    console.log(this.users)
   }
-  users: FirebaseListObservable<any[]>;
 }

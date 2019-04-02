@@ -9,6 +9,7 @@ export class AppService {
     this.users = database.list('users');
   }
   getUsers(){
+    console.log("yeet");
     return this.users;
   }
 }

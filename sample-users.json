@@ -1,0 +1,16 @@
+{ "users": [{
+  "age": "23",
+  "gender": "male",
+  "image": "assets/images/dragon.png",
+  "password": "password",
+  "recentLogin": "false",
+  "username": "username"
+  }, {
+  "age": "28",
+  "gender": "female",
+  "image": "assets/images/lk.png",
+  "password": "ryan",
+  "recentLogin": "false",
+  "username": "ryan"
+  }]
+}
