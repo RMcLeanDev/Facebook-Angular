@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from './../model/login.model';
+import { User } from './../../model/login.model';
 @Component({
   selector: 'app-recent-logins',
   templateUrl: './recent-logins.component.html',
@@ -9,6 +9,6 @@ export class RecentLoginsComponent implements OnInit{
   ngOnInit(){}
   constructor() {}
   @Input() childRecentLogins: User[];
-  
+
 
 }

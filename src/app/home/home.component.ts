@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     console.log(this.masterAccounts);
   }
   users: FirebaseListObservable<any[]>;
-  
+
   masterAccounts: User[] = [
     new User('assets/images/dragon.png', 'username', 'password', 'male', 23, true),
     new User('assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
