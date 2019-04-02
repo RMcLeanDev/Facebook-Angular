@@ -15,13 +15,28 @@ _This is a clone of the famous Facebook. By the time I am done you will be able 
 
 ## Setup/Installation Requirements
 
-* _You can get these files by going into your terminal or powershell and type in `git clone https://github.com/Lilkgb/javawk3`_
-* _Once downloaded in terminal or powershell direct yourself to `javawk3` folder_
+* _Open your terminal or command prompt and input `cd desktop` then `git clone https://github.com/Lilkgb/javawk3` to install the files onto your desktop._
+* _Once downloaded, in terminal type in `cd javawk3` and it will take you into the correct file._
 * _Run `npm install` to get all needed dependencies_
+* _Run  `touch src/app/api-keys.ts` this will create a file called api-keys.ts. We will need this file soon._
+* _This webiste requires you to have a firebase project setup so please go to https://www.firebase.com and signin with your google account then select `Console` in the top right corner_
+* _Create a new project. You can set the project name to whatever you want it to be. Accept the terms and click create project_
+* _On project overview it should say 'Get started by adding Firebase to your app'. Below that click the circle icon that looks like `</>` and it will open a window. Leave this open for now._
+* _Open `Javawk3` folder in any text editor you want to use. I use atom and if you have atom shell commands installed then you can type `atom .` inside your terminal_
+* _Find the `api-keys.ts` file that we created. click the src file then the app file and you should see it right there. Click on `api-keys.ts`_
+* _Inside this file copy and past this
+  `export const masterFirebaseConfig = {
+    apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+  };`_
+* _You should have the firebase window open that was giving you the information. If you don't it's ok. Navigate to https://www.firebase.com and click on `Go To Console` in the top right corner. Select your project. Then on Project overview you should see a symbol that looks like this `</>` click it and that window will show up with the information you need_
+* _In your api-keys.ts file replace all the `x` with the information that firebase gave you._
 * _You may run `npm start` of `ng serve --open` to bring up a live version of the website through your local host_
-* _I use karma-jasime to test my functions so if you would like you use it as well run `npm test` on a mac. I haven't figured out how to make jasmine work on pc_
-* _Create a repository for yourself on github or whatever you may use_
-* _Copy url link thats given and run `git remote add -Your initials- -Link-`_
+* _Create a repository for yourself on github or what application you may use_
+* _Copy url link thats given and run `git remote add -Your initials- -Link-` inside your terminal_
 * _Push your project when ready with `git push -Your initials- -Branch name (master is default)-`_
 
 ## Development server
