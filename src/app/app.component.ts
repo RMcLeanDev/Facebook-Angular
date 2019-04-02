@@ -2,9 +2,6 @@ import { Component, Pipe } from '@angular/core';
 import { User } from './model/login.model';
 import { DomSanitizer } from '@angular/platform-browser';
 
-@Pipe({
-  name: "default"
-})
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
