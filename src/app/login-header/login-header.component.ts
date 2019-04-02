@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { User } from './../model/login.model';
+import { User, Login } from './../model/login.model';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginHeaderComponent {
   constructor() { }
 
   login(username: string, password: string,){
-    let loginUser = new User(null, username, password, null, null, null);
+    let loginUser = new Login(username, password);
     console.log("login function reached");
     this.sendLogin.emit(loginUser);
   }
