@@ -10,8 +10,6 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class LoginHeaderComponent {
   @Output() sendLogin = new EventEmitter();
 
-  loginAccount: FirebaseListObservable<any[]>;
-
   constructor() { }
 
   login(username: string, password: string,){
