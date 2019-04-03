@@ -19,6 +19,9 @@ export class HomeComponent implements OnInit {
     this.users = this.appService.getUsers();
     console.log(this.users)
   }
+  seeDetailPage(clickedUser){
+    this.router.navigate(['profile', clickedUser.$key]);
+  };
   disclaimer = true;
   hideDisclaimer(){
     this.disclaimer=false;

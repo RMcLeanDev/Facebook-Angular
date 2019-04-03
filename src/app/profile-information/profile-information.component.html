@@ -1,3 +1,5 @@
-<p>
-  profile-information works!
-</p>
+<div>
+  <h3>{{(userDisplay | async)?.firstname}}</h3>
+  <h4>{{(userDisplay | async)?.lastname}}</h4>
+  <h4>{{(userDisplay | async)?.age}}</h4>
+</div>
