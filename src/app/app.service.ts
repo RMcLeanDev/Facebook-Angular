@@ -12,4 +12,7 @@ export class AppService {
     console.log("yeet");
     return this.users;
   }
+  addUser(addNewAccount: User){
+    this.users.push(addNewAccount);
+  }
 }
