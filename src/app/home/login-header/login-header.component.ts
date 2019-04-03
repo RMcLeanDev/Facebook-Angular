@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { User, Login } from './../model/login.model';
+import { User, Login } from './../../model/login.model';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({

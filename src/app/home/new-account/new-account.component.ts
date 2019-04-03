@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { User } from './../model/login.model';
+import { User } from './../../model/login.model';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms'
 
 @Component({
@@ -16,9 +16,9 @@ export class NewAccountComponent {
   }
 
   profileImage: string = '';
-  profileId: number = 0;
+  profileId;
 
-  addNewAccount(name: string, newPassword: string, date: string, gender: string){
+  addNewAccount(firstName: string, lastName:string, phoneOrEmail:string, newPassword: string, date: string, gender: string){
     const today = new Date();
     let birthday = new Date(date);
     let age = today.getFullYear() - birthday.getFullYear();
@@ -27,17 +27,21 @@ export class NewAccountComponent {
       age--;
     }
     const finalAge = age;
+    if (isNaN(finalAge)) {
+      return alert("Please put in your birthday so we know you are old enough");
+    }
     if (finalAge < 13){
       return alert("You must be over the age of 13 to create a account");
     }
     if (gender === 'female') {
       this.profileImage = 'assets/images/fbgirl160.jpeg';
-    } else if (gender === 'male') {
-      this.profileImage = 'assets/images/fbguy160.jpg';
     } else {
-      return alert("Please Select a Gender");
+      this.profileImage = 'assets/images/fbguy160.jpg';
     }
-    let newUser: User = new User(this.profileImage, name, newPassword, gender, finalAge, false);
+    if (gender === undefined) {
+      gender = "None Given";
+    }
+    let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false);
     console.log(newUser);
     this.sendUser.emit(newUser);
     alert("Thank you for making a account you can now log in");

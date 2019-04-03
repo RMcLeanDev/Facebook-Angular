@@ -1,4 +1,7 @@
 { "users": [{
+  "firstname": "John",
+  "lastname": "Doe",
+  "emailOrPhone": "000-000-0000",
   "age": "23",
   "gender": "male",
   "image": "assets/images/dragon.png",
@@ -6,11 +9,14 @@
   "recentLogin": "false",
   "username": "username"
   }, {
+  "firstname": "Stacy",
+  "lastname": "Doe",
+  "emailOrPhone": "000-000-0000",
   "age": "28",
   "gender": "female",
   "image": "assets/images/lk.png",
-  "password": "ryan",
+  "password": "stacy",
   "recentLogin": "false",
-  "username": "ryan"
+  "username": "stacy101"
   }]
 }
