@@ -19,4 +19,8 @@ export class HomeComponent implements OnInit {
     this.users = this.appService.getUsers();
     console.log(this.users)
   }
+  disclaimer = true;
+  hideDisclaimer(){
+    this.disclaimer=false;
+  }
 }

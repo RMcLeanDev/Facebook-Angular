@@ -57,3 +57,65 @@ $fbBlue: #365889;
     }
   }
 }
+.welcome {
+  position: fixed;
+  display: grid;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  .mainContainer {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    width: 50%;
+    height: auto;
+    padding: 30px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px blue, 0px 0px 10px inset;
+    h1 {
+      font-size: 50px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      margin-top: 10px;
+    }
+    h3 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    li {
+      margin-top: 10px;
+    }
+    button {
+      border-radius: 0;
+      margin: 0;
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid black;
+      font-size: 20px;
+      width: 75px;
+      align-self: flex-end;
+      transition: 1s linear;
+      justify-self: center;
+      border-radius: 5px;
+      &:hover {
+        cursor: pointer;
+        font-size: 40px;
+        width: 150px;
+      }
+    }
+    .disclaimer {
+      text-align: center;
+      font-size: 13px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
