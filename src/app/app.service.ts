@@ -17,6 +17,6 @@ export class AppService {
   }
 
   getUserById(userId: string){
-    return this.database.object('profile/' + userId);
+    return this.database.object('users/' + userId);
   }
 }

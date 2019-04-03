@@ -12,8 +12,9 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
   providers: [AppService]
 })
 export class ProfileInformationComponent implements OnInit {
+
   userId: string;
-  userDisplay;
+  userDisplay: FirebaseObjectObservable<any[]>;
   constructor(private route: ActivatedRoute, private location: Location, private appService: AppService) { }
 
   ngOnInit() {
