@@ -1,6 +1,6 @@
 <div>
   <h1>THIS STUFF!</h1>
-  <h3>{{userDisplay}}</h3>
+  <h3>{{(userDisplay | async)?.firstname}}</h3>
   <h4>{{(userDisplay | async)?.lastname}}</h4>
   <h4>{{(userDisplay | async)?.age}}</h4>
 </div>
