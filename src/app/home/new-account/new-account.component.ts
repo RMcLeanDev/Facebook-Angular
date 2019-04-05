@@ -37,9 +37,9 @@ export class NewAccountComponent {
       return alert("You must be over the age of 13 to create a account");
     }
     if (gender === 'female') {
-      this.profileImage = 'assets/images/fbgirl160.jpeg';
+      this.profileImage = 'https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/fbgirl450.jpg?alt=media&token=98df585f-8700-4e1c-8c31-3c22639f73b2';
     } else {
-      this.profileImage = 'assets/images/fbguy160.jpg';
+      this.profileImage = 'https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/fbguy800.jpg?alt=media&token=aa9c3b02-b51a-494c-b617-0252987bdece';
     }
     if (gender === undefined) {
       gender = "None Given";
@@ -47,9 +47,10 @@ export class NewAccountComponent {
     let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, "***", gender, finalAge, '', false);
     let emailInfo = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false)
     console.log(newUser);
-    this.authService.createAccount(emailInfo);
-    this.appService.addUser(newUser);
+      setTimeout(() => {
+        this.appService.addUser(newUser);
+      }, 2000)
+      this.authService.createAccount(emailInfo);
     alert("Thank you for making a account you can now log in");
   }
-
 }

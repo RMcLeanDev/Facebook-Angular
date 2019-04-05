@@ -35,8 +35,6 @@ export class FeedComponent implements OnInit {
         this.uid = user.uid;
       }
     });
-    this.profile = this.appService.getProfiles();
-    console.log(this.profile);
   };
 
   logout(){
@@ -44,9 +42,9 @@ export class FeedComponent implements OnInit {
   }
   information(){
     const user = firebase.auth().currentUser;
-    const email = user.email;
-    console.log(email);
-    const info = this.appService.getUserByEmail(email);
+    const id = user.uid;
+    console.log(id);
+    const info = this.appService.getUserByID(id);
     console.log(info)
   }
 }
