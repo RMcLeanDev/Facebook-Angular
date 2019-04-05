@@ -17,10 +17,9 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 })
 export class FeedComponent implements OnInit {
   banner = false;
-  info;
   image;
-  profile;
   uid;
+  profile;
 
   constructor(private route: ActivatedRoute, public authService: AuthService, private router: Router, private appService: AppService, private database: AngularFireDatabase) {}
 
@@ -30,9 +29,9 @@ export class FeedComponent implements OnInit {
         this.router.navigate(['']);
       } else {
         this.router.navigate(['feed']);
-        this.info = user.displayName;
         this.image = user.photoURL;
         this.uid = user.uid;
+        this.profile = this.appService.getUserById(this.uid);
       }
     });
   };
@@ -44,8 +43,6 @@ export class FeedComponent implements OnInit {
     const user = firebase.auth().currentUser;
     const id = user.uid;
     console.log(id);
-    const info = this.appService.getUserByID(id);
-    console.log(info)
   }
 }
 

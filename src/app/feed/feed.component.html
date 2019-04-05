@@ -4,7 +4,7 @@
 <button (click)="information()">info</button>
 <div>
   <button (click)="logout()">Logout</button>
-  <h1>{{info}}</h1>
-  <h4>{{uid}}</h4>
-  <img src="{{image}}" alt="">
+  <h1>{{(profile | async)?.firstname}}</h1>
+  <h4>{{(profile | async)?.gender}}</h4>
+  <img src="{{(profile | async)?.image}}" alt="">
 </div>

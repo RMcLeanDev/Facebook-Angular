@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   {
     path: 'feed',
     component: FeedComponent
-  }
+  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

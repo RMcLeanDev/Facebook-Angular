@@ -3,6 +3,7 @@ import { User } from './../../model/login.model';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { AppService } from './../../app.service';
 import { AuthService } from './../../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-account',
@@ -13,7 +14,7 @@ import { AuthService } from './../../auth.service';
 export class NewAccountComponent {
   @Input() childNewAccount: User[];
 
-  constructor(private appService: AppService, public authService: AuthService) { }
+  constructor(private appService: AppService, public authService: AuthService, private router: Router) { }
   submitResult(result){
     console.log(result);
   }
@@ -49,8 +50,9 @@ export class NewAccountComponent {
     console.log(newUser);
       setTimeout(() => {
         this.appService.addUser(newUser);
-      }, 2000)
+      }, 5000)
       this.authService.createAccount(emailInfo);
+      this.router.navigate(['feed']);
     alert("Thank you for making a account you can now log in");
   }
 }

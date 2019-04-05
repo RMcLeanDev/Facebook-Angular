@@ -14,14 +14,12 @@ export class AppService {
   getUsers(){
     return this.profile;
   }
-  addUser(addNewAccount: User){
+  addUser(addNewAccount){
     let user = firebase.auth().currentUser;
     let userId = user.uid;
     console.log(userId);
     let root = firebase.database().ref();
-    root.child('users').child(userId).set({
-      user: addNewAccount
-    })
+    root.child('users').child(userId).set(addNewAccount);
   }
 
   getUserById(userId: string){

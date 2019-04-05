@@ -14,13 +14,6 @@ export class LoginHeaderComponent {
   @Output() sendLogin = new EventEmitter();
 
   constructor(public authService: AuthService, private router: Router) {
-    this.authService.user.subscribe(user => {
-      if (user == null){
-        this.router.navigate(['']);
-      } else {
-        this.router.navigate(['feed']);
-      }
-    });
   }
 
   login(username, password,){
