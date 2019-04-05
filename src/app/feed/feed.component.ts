@@ -13,9 +13,8 @@ import * as firebase from 'firebase/app';
   providers: [AuthService]
 })
 export class FeedComponent implements OnInit {
-  feed: Promise<boolean>;
-  user = firebase.auth().currentUser;
 
+  info;
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -26,17 +25,19 @@ export class FeedComponent implements OnInit {
         this.router.navigate(['feed']);
       }
     });
-    if (this.user != null){
-      this.user.providerData.forEach(function(profile) {
-        console.log("Sign-in provider: " + profile.providerId);
-        console.log("  Provider-specific UID: " + profile.uid);
-        console.log("  Name: " + profile.displayName);
-        console.log("  Email: " + profile.email);
-        console.log("  Photo URL: " + profile.photoURL);
-      })
-    }
+    this.info = this.authService.getUser();
   }
   logout(){
     this.authService.logout()
   }
+}
+
+if (this.user != null){
+  this.user.providerData.forEach(function(profile) {
+    console.log("Sign-in provider: " + profile.providerId);
+    console.log("  Provider-specific UID: " + profile.uid);
+    console.log("  Name: " + profile.displayName);
+    console.log("  Email: " + profile.email);
+    console.log("  Photo URL: " + profile.photoURL);
+  })
 }

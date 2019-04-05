@@ -9,11 +9,17 @@ import { AngularFireDatabase, FirebaseListObservable} from 'angularfire2/databas
 @Injectable()
 
 export class AuthService {
-  user: Observable<firebase.User>
-
+  user: Observable<firebase.User>;
+  current = firebase.auth().currentUser;
+  
   constructor(public afAuth: AngularFireAuth) {
     this.user=afAuth.authState;
 }
+
+getUser(){
+  return this.current
+}
+
 createAccount(create){
    const promise = new Promise((resolve, reject) => {
      this.afAuth.auth.createUserWithEmailAndPassword(create.email, create.password).catch(function(error) {
