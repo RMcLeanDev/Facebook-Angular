@@ -2,17 +2,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from './../../model/login.model';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { AppService } from './../../app.service';
+import { AuthService } from './../../auth.service';
 
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.scss'],
-  providers: [AppService]
+  providers: [AppService, AuthService]
 })
 export class NewAccountComponent {
   @Input() childNewAccount: User[];
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, public authService: AuthService) { }
   submitResult(result){
     console.log(result);
   }
@@ -46,6 +47,7 @@ export class NewAccountComponent {
     let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false);
     console.log(newUser);
     this.appService.addUser(newUser);
+    this.authService.createAccount(newUser);
     alert("Thank you for making a account you can now log in");
   }
 

@@ -20,13 +20,13 @@ export class LoginHeaderComponent {
       } else {
         this.router.navigate(['profile']);
       }
-    })
+    });
   }
 
-  login(username: string, password: string,){
+  login(username, password,){
     let loginUser = new Login(username, password);
     console.log("login function reached");
-    this.sendLogin.emit(loginUser);
+    this.authService.login(loginUser);
   }
 
 }

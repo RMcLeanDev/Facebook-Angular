@@ -14,7 +14,7 @@ export class AuthService {
   constructor(public afAuth: AngularFireAuth) {
     this.user=afAuth.authState;
 }
-creatAccount(create){
+createAccount(create){
    const promise = new Promise((resolve, reject) => {
      this.afAuth.auth.createUserWithEmailAndPassword(create.email, create.password).catch(function(error) {
        let errorMessage = error.message;
