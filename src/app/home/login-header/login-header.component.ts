@@ -21,7 +21,6 @@ export class LoginHeaderComponent {
         this.router.navigate(['feed']);
       }
     });
-    console.log(this.authService.user.subscribe())
   }
 
   login(username, password,){

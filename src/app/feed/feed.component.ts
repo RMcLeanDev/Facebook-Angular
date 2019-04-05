@@ -13,8 +13,10 @@ import * as firebase from 'firebase/app';
   providers: [AuthService]
 })
 export class FeedComponent implements OnInit {
-
+  banner = false;
   info;
+  image;
+
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -23,10 +25,15 @@ export class FeedComponent implements OnInit {
         this.router.navigate(['']);
       } else {
         this.router.navigate(['feed']);
+        this.info = user.displayName;
+        this.image = user.photoURL;
       }
     });
-    this.info = this.authService.getUser();
-  }
+    setTimeout(() => {
+      console.log(this.info)
+    },1000)
+  };
+
   logout(){
     this.authService.logout()
   }
