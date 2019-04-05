@@ -23,9 +23,8 @@ createAccount(create){
      const user = firebase.auth().currentUser;
      user.updateProfile({
        displayName: create.firstname,
-       photoURL: "gs://albumsproject-89309.appspot.com/fbguy180.png",
+       photoURL: "https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/dragon.png?alt=media&token=c0509963-14af-4f02-8bee-a94dcef40878",
      })
-     console.log(user);
    });
  });
 };

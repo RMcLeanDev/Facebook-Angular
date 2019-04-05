@@ -1,4 +1,8 @@
 <p>
   feed works!
 </p>
-<button (click)="logout()">Logout</button>
+<div *ngIf="feed | async">
+  <button (click)="logout()">Logout</button>
+  <h1>{{user.displayName}}</h1>
+  <img src="{{user.photoURL}}" alt="">
+</div>

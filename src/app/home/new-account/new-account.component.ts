@@ -46,8 +46,8 @@ export class NewAccountComponent {
     }
     let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false);
     console.log(newUser);
-    this.appService.addUser(newUser);
     this.authService.createAccount(newUser);
+    this.appService.addUser(newUser);
     alert("Thank you for making a account you can now log in");
   }
 
