@@ -4,14 +4,14 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { User, Login } from './model/login.model';
+import { AppService } from './app.service';
 import { AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
 @Injectable()
-
 export class AuthService {
   user: Observable<firebase.User>;
   current = firebase.auth().currentUser;
-  
+
   constructor(public afAuth: AngularFireAuth) {
     this.user=afAuth.authState;
 }
@@ -50,4 +50,9 @@ currentUserInfo(){
   const user = firebase.auth().currentUser;
   console.log(user);
 }
+
+userinfo(){
+  const user = firebase.auth().currentUser.email;
+  return user;
+  };
 }

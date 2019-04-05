@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { User, Login } from './../model/login.model';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
+import { AppService } from './../app.service';
+import { ActivatedRoute, Params} from '@angular/router';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss'],
-  providers: [AuthService]
+  providers: [AuthService, AppService]
 })
 export class FeedComponent implements OnInit {
   banner = false;
   info;
   image;
+  profile;
+  uid;
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(private route: ActivatedRoute, public authService: AuthService, private router: Router, private appService: AppService, private database: AngularFireDatabase) {}
 
   ngOnInit() {
     this.authService.user.subscribe(user => {
@@ -27,15 +32,22 @@ export class FeedComponent implements OnInit {
         this.router.navigate(['feed']);
         this.info = user.displayName;
         this.image = user.photoURL;
+        this.uid = user.uid;
       }
     });
-    setTimeout(() => {
-      console.log(this.info)
-    },1000)
+    this.profile = this.appService.getProfiles();
+    console.log(this.profile);
   };
 
   logout(){
     this.authService.logout()
+  }
+  information(){
+    const user = firebase.auth().currentUser;
+    const email = user.email;
+    console.log(email);
+    const info = this.appService.getUserByEmail(email);
+    console.log(info)
   }
 }
 

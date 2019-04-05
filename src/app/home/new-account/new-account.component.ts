@@ -44,9 +44,10 @@ export class NewAccountComponent {
     if (gender === undefined) {
       gender = "None Given";
     }
-    let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false);
+    let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, "***", gender, finalAge, '', false);
+    let emailInfo = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false)
     console.log(newUser);
-    this.authService.createAccount(newUser);
+    this.authService.createAccount(emailInfo);
     this.appService.addUser(newUser);
     alert("Thank you for making a account you can now log in");
   }
