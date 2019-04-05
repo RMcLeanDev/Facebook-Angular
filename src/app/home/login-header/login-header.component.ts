@@ -18,7 +18,7 @@ export class LoginHeaderComponent {
       if (user == null){
         this.router.navigate(['']);
       } else {
-        this.router.navigate(['profile']);
+        this.router.navigate(['feed']);
       }
     });
   }
