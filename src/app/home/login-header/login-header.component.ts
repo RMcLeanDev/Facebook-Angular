@@ -13,7 +13,15 @@ import { AuthService } from './../../auth.service';
 export class LoginHeaderComponent {
   @Output() sendLogin = new EventEmitter();
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, private router: Router) {
+    this.authService.user.subscribe(user => {
+      if (user == null){
+        this.router.navigate(['']);
+      } else {
+        this.router.navigate(['profile']);
+      }
+    })
+  }
 
   login(username: string, password: string,){
     let loginUser = new Login(username, password);
