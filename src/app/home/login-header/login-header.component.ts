@@ -1,16 +1,19 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { User, Login } from './../../model/login.model';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { Router } from '@angular/router';
+import { AuthService } from './../../auth.service';
 
 @Component({
   selector: 'app-login-header',
   templateUrl: './login-header.component.html',
-  styleUrls: ['./login-header.component.scss']
+  styleUrls: ['./login-header.component.scss'],
+  providers: [AuthService]
 })
 export class LoginHeaderComponent {
   @Output() sendLogin = new EventEmitter();
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   login(username: string, password: string,){
     let loginUser = new Login(username, password);
