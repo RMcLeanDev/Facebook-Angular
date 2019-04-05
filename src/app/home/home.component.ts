@@ -22,8 +22,4 @@ export class HomeComponent implements OnInit {
   seeDetailPage(clickedUser){
     this.router.navigate(['profile', clickedUser.$key]);
   };
-  disclaimer = true;
-  hideDisclaimer(){
-    this.disclaimer=false;
-  }
 }
