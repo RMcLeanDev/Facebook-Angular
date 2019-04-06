@@ -1,24 +1,28 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from './../../model/login.model';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms'
+import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { AppService } from './../../app.service';
+import { AuthService } from './../../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
-  styleUrls: ['./new-account.component.scss']
+  styleUrls: ['./new-account.component.scss'],
+  providers: [AppService, AuthService]
 })
 export class NewAccountComponent {
-  @Input() childNewAccount: User[];
-  @Output() sendUser = new EventEmitter();
-  constructor() { }
+
+  constructor(private appService: AppService, public authService: AuthService, private router: Router) { }
+
   submitResult(result){
     console.log(result);
   }
 
   profileImage: string = '';
-  profileId: number = 0;
+  profileId;
 
-  addNewAccount(name: string, newPassword: string, date: string, gender: string){
+  addNewAccount(firstName: string, lastName:string, phoneOrEmail:string, newPassword: string, date: string, gender: string){
     const today = new Date();
     let birthday = new Date(date);
     let age = today.getFullYear() - birthday.getFullYear();
@@ -27,20 +31,28 @@ export class NewAccountComponent {
       age--;
     }
     const finalAge = age;
+    if (isNaN(finalAge)) {
+      return alert("Please put in your birthday so we know you are old enough");
+    }
     if (finalAge < 13){
       return alert("You must be over the age of 13 to create a account");
     }
     if (gender === 'female') {
-      this.profileImage = 'assets/images/fbgirl160.jpeg';
-    } else if (gender === 'male') {
-      this.profileImage = 'assets/images/fbguy160.jpg';
+      this.profileImage = 'https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/fbgirl450.jpg?alt=media&token=98df585f-8700-4e1c-8c31-3c22639f73b2';
     } else {
-      return alert("Please Select a Gender");
+      this.profileImage = 'https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/fbguy800.jpg?alt=media&token=aa9c3b02-b51a-494c-b617-0252987bdece';
     }
-    let newUser: User = new User(this.profileImage, name, newPassword, gender, finalAge, false);
+    if (gender === undefined) {
+      gender = "None Given";
+    }
+    let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, "***", gender, finalAge, '', false);
+    let emailInfo = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false)
     console.log(newUser);
-    this.sendUser.emit(newUser);
+      setTimeout(() => {
+        this.appService.addUser(newUser);
+      }, 5000)
+      this.authService.createAccount(emailInfo);
+      this.router.navigate(['feed']);
     alert("Thank you for making a account you can now log in");
   }
-
 }

@@ -1,39 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/login.model';
+import { User, RecentLogin } from '../model/login.model';
+import { Router } from '@angular/router';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [AppService]
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  users: FirebaseListObservable<any[]>;
+  masterRecentLogin: RecentLogin[] = [];
+  constructor(private router: Router, private appService: AppService) {}
 
   ngOnInit() {
-    console.log(this.masterAccounts);
+    this.users = this.appService.getUsers();
   }
-  users: FirebaseListObservable<any[]>;
 
-  masterAccounts: User[] = [
-    new User('assets/images/dragon.png', 'username', 'password', 'male', 23, true),
-    new User('assets/images/lk.png', 'ryan', 'ryan', 'female', 18, false),
-  ];
-  addUser(newUser: User){
-    this.masterAccounts.push(newUser);
-  }
-  recentLogins: User[] = [];
+  seeDetailPage(clickedUser){
+    this.router.navigate(['profile', clickedUser.$key]);
+  };
+  recentLogin(person){
+    console.log(person);
 
-  login(loginUser: User){
-    console.log("app component login function reached");
-    for (let i = 0; i < this.masterAccounts.length; i++){
-      if (loginUser.username === this.masterAccounts[i].username && loginUser.password === this.masterAccounts[i].password){
-        this.masterAccounts[i].recentLogin = true;
-        this.recentLogins.push(this.masterAccounts[i]);
-        console.log(this.recentLogins);
-        return alert("You have logged in!")
-      } else {console.log("not able to log in")}
-    }
   }
 }
