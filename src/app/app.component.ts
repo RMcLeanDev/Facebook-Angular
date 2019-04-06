@@ -1,5 +1,5 @@
-import { Component, Pipe } from '@angular/core';
-import { User } from './model/login.model';
+import { Component, Pipe, Input } from '@angular/core';
+import { User, RecentLogin } from './model/login.model';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({

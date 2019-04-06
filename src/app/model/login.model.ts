@@ -5,3 +5,6 @@ export class User {
 export class Login {
   constructor(public username: string, public password: string){};
 }
+export class RecentLogin {
+  constructor(public username: string, public image: string){}
+}

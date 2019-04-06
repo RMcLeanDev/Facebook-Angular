@@ -11,10 +11,3 @@
     <p class="createPageBand"><b><span class="blues">Create a Page</span> for a celebrity, band or business.</b></p>
   </div>
 </div>
-<p>time of build: 4/5/19 @ 6:50pm</p>
-<ul *ngFor="let user of users | async" (click)="seeDetailPage(user)">
-  <div class="panel-body">
-    <p>users</p>
-    <li>{{user.firstname}} {{user.lastname}}</li>
-  </div>
-</ul>

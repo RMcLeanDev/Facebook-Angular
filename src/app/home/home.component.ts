@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/login.model';
+import { User, RecentLogin } from '../model/login.model';
 import { Router } from '@angular/router';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { AppService } from '../app.service';
@@ -12,7 +12,7 @@ import { AppService } from '../app.service';
 })
 export class HomeComponent implements OnInit {
   users: FirebaseListObservable<any[]>;
-
+  masterRecentLogin: RecentLogin[] = [];
   constructor(private router: Router, private appService: AppService) {}
 
   ngOnInit() {
@@ -21,4 +21,7 @@ export class HomeComponent implements OnInit {
   seeDetailPage(clickedUser){
     this.router.navigate(['profile', clickedUser.$key]);
   };
+  recentLogin(person){
+    console.log(person);
+  }
 }

@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { User, Login } from './model/login.model';
+import { User, Login, RecentLogin } from './model/login.model';
 import { AppService } from './app.service';
 import { AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
 @Injectable()
 export class AuthService {
+  @Output() recentLogins = new EventEmitter();
+
   user: Observable<firebase.User>;
   current = firebase.auth().currentUser;
+  recentLogin;
 
   constructor(public afAuth: AngularFireAuth) {
     this.user=afAuth.authState;
@@ -43,6 +46,10 @@ login(user: Login) {
 };
 
 logout(){
+  const user = firebase.auth().currentUser;
+  this.recentLogin = user.uid
+  this.recentLogin = new RecentLogin('username', 'password');
+  this.recentLogins.emit(this.recentLogin);
   this.afAuth.auth.signOut();
 };
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from './../../model/login.model';
+import { User, RecentLogin } from './../../model/login.model';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { AppService } from './../../app.service';
 import { Router } from '@angular/router';
@@ -13,7 +13,5 @@ export class RecentLoginsComponent implements OnInit{
 
   ngOnInit(){}
   constructor() {};
-
-
 
 }

@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
   providers: [AppService, AuthService]
 })
 export class NewAccountComponent {
-  @Input() childNewAccount: User[];
 
   constructor(private appService: AppService, public authService: AuthService, private router: Router) { }
+
   submitResult(result){
     console.log(result);
   }

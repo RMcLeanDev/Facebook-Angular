@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { User, Login } from './../model/login.model';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { User, Login, RecentLogin } from './../model/login.model';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
@@ -16,10 +16,14 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
   providers: [AuthService, AppService]
 })
 export class FeedComponent implements OnInit {
+  @Input() childRecentLogin: RecentLogin[];
+  @Output() sendUser = new EventEmitter();
+
+  profile;
   banner = false;
   image;
   uid;
-  profile;
+  recentLogin;
 
   constructor(private route: ActivatedRoute, public authService: AuthService, private router: Router, private appService: AppService, private database: AngularFireDatabase) {}
 
@@ -40,9 +44,9 @@ export class FeedComponent implements OnInit {
     this.authService.logout()
   }
   information(){
-    const user = firebase.auth().currentUser;
-    const id = user.uid;
-    console.log(id);
+    console.log(this.uid);
+    this.router.navigate(['profile', this.uid])
+    console.log("Yeet");
   }
 }
 
