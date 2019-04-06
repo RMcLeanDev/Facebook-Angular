@@ -18,10 +18,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.users = this.appService.getUsers();
   }
+
   seeDetailPage(clickedUser){
     this.router.navigate(['profile', clickedUser.$key]);
   };
   recentLogin(person){
     console.log(person);
+
   }
 }
