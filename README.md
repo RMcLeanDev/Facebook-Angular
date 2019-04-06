@@ -78,9 +78,25 @@ _I adjusted the animation that occurs from the original site when you hover one 
 
 _I adjusted the birthday input to a calendar input so it's not three separate inputs but one._
 
+## Completed features
+
+* _User can create a account on the home page_
+* _User can log in with the email and password they set up_
+* _User can see the feed page (nothing on it yet)_
+* _User can select their profile in the header to be taken to their profile page_
+* _User can navigate back to the feed by clicking either the facebook icon on the left of the header or clicking 'home' in the header_
+* _If the user is logged in from a previous session and they come back to the website it will automatically log them back in and direct them to the feed_
+
+## Features to Completed
+
+* _When user logs out it will display their image and name as a recent user_
+* _User will be able to edit their information via the profile page_
+* _User will be able to make a post and have it display in the feed_
+* _User will be able to see their list of friends via their profile page_
+
 ## Known Bugs
 
-_Unable to get a error message to appear properly if a user types a incorrect username and/or password_
+_very rarely when a user creates a account their uid that created for their email/password account wont transfer to their information that's held in the database. Super rare occurrence._
 
 ## Support and contact details
 
@@ -90,7 +106,6 @@ _Please contact Ryan McLean at rmcleandev@gmail.com_
 
 * _HTML_
 * _Webpack_
-* _Karma-Jasmine_
 * _Bootstrap_
 * _Angular2_
 * _Typescript_
