@@ -8,5 +8,14 @@
     <img src="{{(profile | async)?.image}}" alt="">
     <p>{{(profile | async)?.firstname}}</p>
   </div>
+  <div class="divider"></div>
+  <div [routerLink]="['/feed']" class="home">
+    <p>Home</p>
+  </div>
+  <div class="divider"></div>
+  <div class="create">
+    <p>Create</p>
+  </div>
+  <div class="divider"></div>
   <button class="logout" (click)="logout()">Logout</button>
 </nav>

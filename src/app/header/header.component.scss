@@ -58,7 +58,6 @@ $fbDrkBlue: #365889;
     padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
-    border-right: 1px solid $fbDrkBlue;
     img {
       height: 25px;
       align-self: center;
@@ -82,7 +81,42 @@ $fbDrkBlue: #365889;
     border: none;
     &:hover {
       cursor: pointer;
-
+    }
+  }
+  .divider {
+    align-self: center;
+    height: 20px;
+    width: 1px;
+    background-color: $fbDrkBlue;
+  }
+  .home {
+    display: flex;
+    height: 26px;
+    align-self: center;
+    border-radius: 5px;
+    p {
+      align-self: center;
+      margin: 3px 10px;
+      color: white;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $fbDrkBlue;
+    }
+  }
+  .create {
+    display: flex;
+    align-self: center;
+    height: 26px;
+    border-radius: 5px;
+    p {
+      align-self: center;
+      margin: 3px 10px;
+      color: white;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $fbDrkBlue;
     }
   }
 }
