@@ -74,4 +74,15 @@ $fbDrkBlue: #365889;
       background-color: $fbDrkBlue;
     }
   }
+  .logout {
+    margin-left: 10px;
+    background: none;
+    height: 25px;
+    align-self: center;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      
+    }
+  }
 }

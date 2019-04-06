@@ -8,5 +8,5 @@
     <img src="{{(profile | async)?.image}}" alt="">
     <p>{{(profile | async)?.firstname}}</p>
   </div>
-  <button (click)="logout()">Logout</button>
+  <button class="logout" (click)="logout()">Logout</button>
 </nav>
