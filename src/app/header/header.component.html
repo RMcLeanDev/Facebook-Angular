@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <a [routerLink]="['/feed']"><img src="../assets/images/facebookLogo.png" alt="" width="24" height="24"></a>
+  <div class="search">
+    <input #search placeholder="Search">
+    <button><img src="../assets/images/search.png" alt=""></button>
+  </div>
+  <div class="user" (click)="information()">
+    <img src="{{(profile | async)?.image}}" alt="">
+    <p>{{(profile | async)?.firstname}}</p>
+  </div>
+  <button (click)="logout()">Logout</button>
+</nav>

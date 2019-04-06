@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FeedComponent } from './feed/feed.component';
 import { ProfileInformationComponent } from './profile-information/profile-information.component';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import { HeaderComponent } from './header/header.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,6 +32,7 @@ export const firebaseConfig = {
     HomeComponent,
     FeedComponent,
     ProfileInformationComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
