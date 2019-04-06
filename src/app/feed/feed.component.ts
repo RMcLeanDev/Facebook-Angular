@@ -33,7 +33,6 @@ export class FeedComponent implements OnInit {
         this.router.navigate(['']);
       } else {
         this.router.navigate(['feed']);
-        this.image = user.photoURL;
         this.uid = user.uid;
         this.profile = this.appService.getUserById(this.uid);
       }
