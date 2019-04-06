@@ -12,7 +12,8 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  providers: [AuthService, AppService]
 })
 export class HeaderComponent implements OnInit {
   profile;
@@ -24,7 +25,6 @@ export class HeaderComponent implements OnInit {
       if (user == null){
         this.router.navigate(['']);
       } else {
-        this.router.navigate(['feed']);
         this.uid = user.uid;
         this.profile = this.appService.getUserById(this.uid);
       }
@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.authService.logout()
   }
-  
+
   information(){
     console.log(this.uid);
     this.router.navigate(['profile', this.uid])

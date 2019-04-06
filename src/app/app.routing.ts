@@ -10,13 +10,13 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'profile/:id',
-    component: ProfileInformationComponent
-  },
-  {
     path: 'feed',
     component: FeedComponent
   },
+  {
+    path: 'profile/:id',
+    component: ProfileInformationComponent
+  }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
