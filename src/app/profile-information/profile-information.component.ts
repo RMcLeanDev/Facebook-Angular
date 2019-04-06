@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { User } from '../model/login.model';
 import { AppService } from '../app.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-information',
@@ -15,7 +16,7 @@ export class ProfileInformationComponent implements OnInit {
 
   userId: string;
   userDisplay;
-  constructor(private route: ActivatedRoute, private location: Location, private appService: AppService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
@@ -24,5 +25,7 @@ export class ProfileInformationComponent implements OnInit {
     this.userDisplay = this.appService.getUserById(this.userId);
     console.log(this.userDisplay);
   }
-
+  feed(){
+    this.router.navigate(['feed']);
+  }
 }
