@@ -1,7 +1,15 @@
 <app-header></app-header>
-<div>
-  <h1>THIS STUFF!</h1>
-  <h3>{{(userDisplay | async)?.firstname}}</h3>
-  <h4>{{(userDisplay | async)?.lastname}}</h4>
-  <h4>{{(userDisplay | async)?.age}}</h4>
+<div class="all">
+  <div class="profile">
+    <h1>Profile banner and image</h1>
+    <h1><img class="userImage" src="{{(userDisplay | async)?.image}}" alt="">{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
+  </div>
+  <div class="main">
+    <div class="left">
+      <h1>Intro and photos</h1>
+    </div>
+    <div class="right">
+      <h1>create a post & user posts</h1>
+    </div>
+  </div>
 </div>

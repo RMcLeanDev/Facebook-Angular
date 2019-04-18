@@ -18,6 +18,7 @@ $fbDrkBlue: #365889;
     display: flex;
     height: 42px;
     width: 1018px;
+    min-width: 500px;
     max-width: 1018px;
     margin-left: 3%;
   }
@@ -31,6 +32,7 @@ $fbDrkBlue: #365889;
     margin-left: 10px;
     display: flex;
     align-self: center;
+    min-width: 118px;
     max-width: 488px;
     width: 100%;
     box-shadow: 0px 0px 3px;
