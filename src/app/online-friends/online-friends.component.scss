@@ -1,4 +1,6 @@
 $gry: #ccc;
+$fbBlue: #4267B2;
+$fbDrkBlue: #365889;
 
 @mixin noBorders{
   margin: 0;
@@ -37,9 +39,25 @@ $gry: #ccc;
     .slideshow {
       display: flex;
       height: 65px;
-      width: 100%;
+      width: 95%;
       margin-right: 5px;
       align-items: center;
+      border-bottom: 1px solid #ccc;
+      .slideshowImg{
+        width: 100%;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        img{
+          height: 47px;
+          width: 47px;
+          border-radius: 50px;
+          opacity: 1;
+          &:hover{
+            box-shadow: 0px 0px 3px $fbDrkBlue;
+          }
+        }
+      }
       img {
         height: 65px;
         width: 20px;
