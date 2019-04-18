@@ -8,7 +8,9 @@ $fbDrkBlue: #365889;
   width: 24px;
   align-self: center;
   margin: 0px 7px;
+  opacity: .7;
   &:hover{
+    opacity: 1;
     cursor: pointer;
   }
 }
