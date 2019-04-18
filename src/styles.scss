@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: customFont;
+  src: url('assets/fonts/SF-Compact-Text-Regular.otf')
+}
 body {
   margin: 0;
 }
 *:focus{
   outline: none;
+}
+*{
+  font-family: customFont;
 }
