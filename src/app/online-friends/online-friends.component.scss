@@ -8,6 +8,7 @@ $fbDrkBlue: #365889;
 }
 .currentUsers{
   position: fixed;
+  background-color: #e9ebee;
   top: 0;
   right: 0;
   width: 205px;
@@ -19,6 +20,7 @@ $fbDrkBlue: #365889;
     margin-top: 45px;
     width: 100%;
     .title{
+      margin-top: 5px;
       display: flex;
       margin-right: 5px;
       justify-content: space-between;
@@ -54,7 +56,7 @@ $fbDrkBlue: #365889;
           border-radius: 50px;
           opacity: 1;
           &:hover{
-            box-shadow: 0px 0px 3px $fbDrkBlue;
+            box-shadow: 0px 0px 4px $fbBlue;
           }
         }
       }
@@ -73,12 +75,21 @@ $fbDrkBlue: #365889;
 
   }
   .search{
+    background-color: #f5f6f7;
     position: fixed;
     bottom: 0;
     width: 205px;
     margin-left: -5px;
     padding-right: 5px;
+    height: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     input {
+      height: 30px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
     }
   }
 }
