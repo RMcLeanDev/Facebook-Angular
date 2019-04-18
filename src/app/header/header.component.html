@@ -1,21 +1,29 @@
 <nav class="navbar">
-  <a [routerLink]="['/feed']"><img src="../assets/images/facebookLogo.png" alt="" width="24" height="24"></a>
-  <div class="search">
-    <input #search placeholder="Search">
-    <button><img src="../assets/images/search.png" alt=""></button>
+  <div class="max-width">
+    <a [routerLink]="['/feed']"><img src="../assets/images/facebookLogo.png" alt="" width="24" height="24"></a>
+    <div class="search">
+      <input #search placeholder="Search">
+      <button><img src="../assets/images/search.png" alt=""></button>
+    </div>
+    <div class="user" (click)="information()">
+      <img src="{{(profile | async)?.image}}" alt="">
+      <p>{{(profile | async)?.firstname}}</p>
+    </div>
+    <div class="divider"></div>
+    <div [routerLink]="['/feed']" class="home">
+      <p>Home</p>
+    </div>
+    <div class="divider"></div>
+    <div class="create">
+      <p>Create</p>
+    </div>
+    <div class="divider"></div>
+    <img class="icon" src="../assets/icon/friend.jpg" alt="">
+    <img class="icon" src="../assets/icon/messanger.jpg" alt="">
+    <img class="icon" src="../assets/icon/alert.jpg" alt="">
+    <div class="divider"></div>
+    <img class="icon" src="../assets/icon/help.jpg" alt="">
+    <img class="icon" src="../assets/icon/moremenu.jpg" alt="">
+    <button class="logout" (click)="logout()">Logout</button>
   </div>
-  <div class="user" (click)="information()">
-    <img src="{{(profile | async)?.image}}" alt="">
-    <p>{{(profile | async)?.firstname}}</p>
-  </div>
-  <div class="divider"></div>
-  <div [routerLink]="['/feed']" class="home">
-    <p>Home</p>
-  </div>
-  <div class="divider"></div>
-  <div class="create">
-    <p>Create</p>
-  </div>
-  <div class="divider"></div>
-  <button class="logout" (click)="logout()">Logout</button>
 </nav>

@@ -1,4 +1,31 @@
-.stuff {
-  height: 300px;
-  background-color: black;
+.feed{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1018px auto;
+  margin-left: 3%;
+  margin-top: 10px;
+  .main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 180px 500px 308px;
+    grid-gap: 10px;
+    .left{
+      background-color: #eee;
+    }
+    .middle{
+      background-color: #eee;
+    }
+    .right{
+      background-color: #eee;
+    }
+  }
+  .users{
+    .currentUsers{
+      position: fixed;
+      top: 42px;
+      right: 0;
+      width: 205px;
+      background-color: #eee;
+    }
+  }
 }
