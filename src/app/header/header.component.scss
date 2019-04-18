@@ -16,6 +16,8 @@ $fbDrkBlue: #365889;
   position: sticky;
   top: 0;
   background-color: $fbBlue;
+  border-bottom: 1px solid #29487d;
+  z-index: 1;
   .max-width{
     display: flex;
     height: 42px;

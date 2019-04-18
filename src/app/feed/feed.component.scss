@@ -2,30 +2,25 @@
   width: 97%;
   display: grid;
   grid-template-columns: 1018px auto;
-  margin-left: 3%;
-  margin-top: 10px;
+  padding-left: 3%;
+  padding-top: 10px;
+  background-color: #eee;
   .main{
     width: 100%;
     display: grid;
     grid-template-columns: 180px 500px 308px;
     grid-gap: 10px;
     .left{
-      background-color: #eee;
+      border: 1px solid red;
     }
     .middle{
-      background-color: #eee;
+      border: 1px solid red;
     }
     .right{
-      background-color: #eee;
+      border: 1px solid red;
     }
   }
   .users{
-    .currentUsers{
-      position: fixed;
-      top: 42px;
-      right: 0;
-      width: 205px;
-      background-color: #eee;
-    }
+    
   }
 }

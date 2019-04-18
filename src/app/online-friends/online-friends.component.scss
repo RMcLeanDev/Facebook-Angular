@@ -1,0 +1,50 @@
+$gry: #ccc;
+
+@mixin noBorders{
+  margin: 0;
+  padding: 0;
+}
+.currentUsers{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 205px;
+  height: 100%;
+  border-left: 1px solid $gry;
+  padding-left: 5px;
+  margin-left: 5px;
+  .games {
+    margin-top: 45px;
+    width: 100%;
+    .title{
+      display: flex;
+      margin-right: 5px;
+      justify-content: space-between;
+      .bigtext{
+        font-size: 13px;
+        @include noBorders;
+      }
+      .smalltext{
+        font-size: 11px;
+        @include noBorders;
+        margin-top: 2px;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .list{
+
+  }
+  .search{
+    position: fixed;
+    bottom: 0;
+    width: 205px;
+    margin-left: -5px;
+    padding-right: 5px;
+    input {
+    }
+  }
+}

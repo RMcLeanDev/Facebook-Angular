@@ -15,6 +15,7 @@ import { FeedComponent } from './feed/feed.component';
 import { ProfileInformationComponent } from './profile-information/profile-information.component';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
+import { OnlineFriendsComponent } from './online-friends/online-friends.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -33,6 +34,7 @@ export const firebaseConfig = {
     FeedComponent,
     ProfileInformationComponent,
     HeaderComponent,
+    OnlineFriendsComponent,
   ],
   imports: [
     BrowserModule,
