@@ -8,6 +8,14 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "rewrites": [{
+    "source": "/dist/**",
+    "destination": "/dist.html"
+  },
+  {
+    "source": "**",
+    "destination": "/index.html"
+  }]
   }
 }
