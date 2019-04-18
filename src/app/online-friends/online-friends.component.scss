@@ -44,7 +44,7 @@ $fbDrkBlue: #365889;
       width: 95%;
       margin-right: 5px;
       align-items: center;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid $gry;
       .slideshowImg{
         width: 100%;
         margin-top: 5px;
@@ -72,7 +72,29 @@ $fbDrkBlue: #365889;
     }
   }
   .list{
-
+    width: 100%;
+    display: flex;
+    margin-left: -5px;
+    padding-right: 5px;
+    margin-top: 10px;
+    &:hover {
+      background-color: #ddd;
+      cursor: pointer;
+    }
+    .user {
+      width: 100%;
+      padding: 4px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      img{
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+        margin-right: 3px;
+      }
+    }
   }
   .search{
     background-color: #f5f6f7;
