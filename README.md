@@ -34,7 +34,7 @@ _This is a clone of the famous Facebook. By the time I am done you will be able 
   };`_
 * _You should have the firebase window open that was giving you the information. If you don't it's ok. Navigate to https://www.firebase.com and click on `Go To Console` in the top right corner. Select your project. Then on Project overview you should see a symbol that looks like this `</>` click it and that window will show up with the information you need_
 * _In your api-keys.ts file replace all the `x` with the information that firebase gave you._
-* _You may run `npm start` of `ng serve --open` to bring up a live version of the website through your local host_
+* _You may run `npm start` or `ng serve --open` to bring up a live version of the website through your local host_
 * _Create a repository for yourself on github or what application you may use_
 * _Copy url link thats given and run `git remote add -Your initials- -Link-` inside your terminal_
 * _Push your project when ready with `git push -Your initials- -Branch name (master is default)-`_
