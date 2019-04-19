@@ -3,6 +3,7 @@
   <div class="profile">
     <h1>Profile banner and image</h1>
     <h1><img class="userImage" src="{{(userDisplay | async)?.image}}" alt="">{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
+    <p (click)="updateProfileImage()">Update Image?</p>
   </div>
   <div class="main">
     <div class="left">
@@ -13,3 +14,4 @@
     </div>
   </div>
 </div>
+<app-newprofileimage></app-newprofileimage>
