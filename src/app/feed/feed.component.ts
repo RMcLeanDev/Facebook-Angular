@@ -18,7 +18,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 export class FeedComponent implements OnInit {
   @Input() childRecentLogin: RecentLogin[];
   @Output() sendUser = new EventEmitter();
-  
+
   profile;
   banner = false;
   image;

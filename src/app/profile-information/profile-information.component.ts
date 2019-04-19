@@ -28,8 +28,4 @@ export class ProfileInformationComponent implements OnInit {
   feed(){
     this.router.navigate(['feed']);
   }
-
-  updateProfileImage(){
-    
-  }
 }
