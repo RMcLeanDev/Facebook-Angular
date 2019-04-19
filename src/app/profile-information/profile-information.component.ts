@@ -23,7 +23,6 @@ export class ProfileInformationComponent implements OnInit {
       this.userId = urlParamaters['id'];
     });
     this.userDisplay = this.appService.getUserById(this.userId);
-    console.log(this.userDisplay);
   }
   feed(){
     this.router.navigate(['feed']);

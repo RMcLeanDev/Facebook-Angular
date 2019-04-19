@@ -17,11 +17,10 @@ export class NewprofileimageComponent implements OnInit {
   constructor(private http: HttpClient, private upSvc: AppService, public authService: AuthService) { }
 
   ngOnInit() {
-    console.log(firebase.storage().ref())
+    firebase.storage().ref()
     this.authService.user.subscribe(user => {
       if (user != null){
         this.uid = user.uid;
-        console.log(this.uid)
       }
     });
   }

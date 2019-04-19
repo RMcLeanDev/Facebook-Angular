@@ -45,8 +45,8 @@ export class NewAccountComponent {
     if (gender === undefined) {
       gender = "None Given";
     }
-    let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, "***", gender, finalAge, '', false);
-    let emailInfo = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, '', false)
+    let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, "***", gender, finalAge, {default: this.profileImage});
+    let emailInfo = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, null);
     console.log(newUser);
       setTimeout(() => {
         this.appService.addUser(newUser);

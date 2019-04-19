@@ -6,7 +6,7 @@
       <button><img src="../assets/images/search.png" alt=""></button>
     </div>
     <div class="user" (click)="information()">
-      <img src="{{(profile | async)?.image}}" alt="">
+      <img src="{{(profile | async)?.profileImg}}" alt="">
       <p>{{(profile | async)?.firstname}}</p>
     </div>
     <div class="divider"></div>
