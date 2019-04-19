@@ -42,7 +42,7 @@ export class AppService {
         upload.name = upload.file.name
         this.saveFileData(upload)
         firebase.database().ref().child(`users/${this.uid}/profileImg`).set(upload.url);
-        firebase.database().ref().child(`users/${this.uid}/images`).push(`${upload.url}`)
+        firebase.database().ref().child(`users/${this.uid}/images`).push({name:upload.name, url:upload.url})
       }
     );
   }
@@ -51,6 +51,9 @@ export class AppService {
   }
   getUsers(){
     return this.profile;
+  }
+  getUserImages(uid){
+    return this.database.list(`users/${uid}/images`)
   }
   addUser(addNewAccount){
     let user = firebase.auth().currentUser;

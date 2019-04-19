@@ -16,6 +16,8 @@ export class ProfileInformationComponent implements OnInit {
 
   userId: string;
   userDisplay;
+  images;
+
   constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService) { }
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class ProfileInformationComponent implements OnInit {
       this.userId = urlParamaters['id'];
     });
     this.userDisplay = this.appService.getUserById(this.userId);
+    this.images = this.appService.getUserImages(this.userId);
   }
   feed(){
     this.router.navigate(['feed']);
