@@ -11,4 +11,4 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
 
-console.log("Time of Build 4/18/19 @ 4:32PM")
+console.log("Time of Build 4/19/19 @ 3:29AM")
