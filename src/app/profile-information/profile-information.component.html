@@ -5,6 +5,10 @@
     <div class="profile">
       <div class="banner">
         <img src="../assets/images/bannerbg.jpg" alt="">
+        <div class="updateBanner">
+          <img src="../assets/icon/whiteCamera.png" alt="">
+          <p>Update Cover Photo</p>
+        </div>
       </div>
       <div class="profileOnBanner">
         <div class="profileImg">
@@ -15,7 +19,7 @@
           </div>
         </div>
         <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
-        <p (click)="updateProfileImage()">Update Image?</p>
+        <p>update profile</p>
       </div>
       <div class="profileNav">
 
