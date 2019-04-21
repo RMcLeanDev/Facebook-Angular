@@ -4,8 +4,10 @@
     <div class="banner">
       <img src="../assets/images/bannerbg.jpg" alt="">
     </div>
-    <div class="profileImg">
-      <img class="userImage" src="{{(userDisplay | async)?.profileImg}}" alt="">
+    <div class="profileOnBanner">
+      <div class="profileImg">
+        <img src="{{(userDisplay | async)?.profileImg}}" alt="">      
+      </div>
       <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
       <p (click)="updateProfileImage()">Update Image?</p>
     </div>
