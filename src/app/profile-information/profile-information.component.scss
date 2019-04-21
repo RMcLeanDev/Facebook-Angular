@@ -1,9 +1,13 @@
 .all {
   width: 100%;
+  background-color: #eee;
+  .information{
+    width: 851px;
+    margin: auto;
+    padding-right: 350px;
+  }
   .profile{
     width: 851px;
-    margin-left: 5%;
-    background-color: #eee;
     margin-top: -21px;
     .banner{
       z-index: -1;
@@ -47,6 +51,44 @@
         background-color: white;
         align-content: center;
         justify-content: center;
+        &:hover {
+          .update{
+            opacity: .5;
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+        .update{
+          transition: .2s linear;
+          margin-top: 90px;
+          margin-left: 7px;
+          padding: 10px;
+          position: absolute;
+          width: 148px;
+          height: 65px;
+          border-bottom-left-radius: 150px;
+          border-bottom-right-radius: 150px;
+          background-color: black;
+          opacity: 0;
+          text-align: center;
+          &:hover{
+            opacity: .8;
+            cursor: pointer;
+          }
+          img{
+            transition: .1s linear;
+            margin-top: 15px;
+            width: 50px;
+            height: 50px;
+          }
+          p{
+            color: white;
+            margin-top: 0;
+            padding-top: 0;
+          }
+        }
         img{
           width: auto;
           height: 168px;

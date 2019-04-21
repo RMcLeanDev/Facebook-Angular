@@ -1,29 +1,35 @@
 <app-header></app-header>
 <div class="all">
-  <div class="profile">
-    <div class="banner">
-      <img src="../assets/images/bannerbg.jpg" alt="">
-    </div>
-    <div class="profileOnBanner">
-      <div class="profileImg">
-        <img src="{{(userDisplay | async)?.profileImg}}" alt="">
+  <div class="information">
+    <div class="profile">
+      <div class="banner">
+        <img src="../assets/images/bannerbg.jpg" alt="">
       </div>
-      <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
-      <p (click)="updateProfileImage()">Update Image?</p>
-    </div>
-    <div class="profileNav">
+      <div class="profileOnBanner">
+        <div class="profileImg">
+          <img src="{{(userDisplay | async)?.profileImg}}" alt="">
+          <div class="update">
+            <img src="../assets/icon/whiteCamera.png" alt="">
+            <p>Update</p>
+          </div>
+        </div>
+        <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
+        <p (click)="updateProfileImage()">Update Image?</p>
+      </div>
+      <div class="profileNav">
 
-    </div>
-  </div>
-  <div class="main">
-    <div class="left">
-      <h1>Photos</h1>
-      <div class="userImgs" *ngFor="let image of images | async">
-        <img src="{{image.url}}" alt="">
       </div>
     </div>
-    <div class="right">
-      <h1>create a post & user posts</h1>
+    <div class="main">
+      <div class="left">
+        <h1>Photos</h1>
+        <div class="userImgs" *ngFor="let image of images | async">
+          <img src="{{image.url}}" alt="">
+        </div>
+      </div>
+      <div class="right">
+        <h1>create a post & user posts</h1>
+      </div>
     </div>
   </div>
 </div>
