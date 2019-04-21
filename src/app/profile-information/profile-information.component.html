@@ -6,12 +6,12 @@
     </div>
     <div class="profileOnBanner">
       <div class="profileImg">
-        <img src="{{(userDisplay | async)?.profileImg}}" alt="">      
+        <img src="{{(userDisplay | async)?.profileImg}}" alt="">
       </div>
       <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
       <p (click)="updateProfileImage()">Update Image?</p>
     </div>
-    <div class="filler">
+    <div class="profileNav">
 
     </div>
   </div>
