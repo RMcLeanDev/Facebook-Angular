@@ -22,7 +22,6 @@ export class AuthService {
 getUser(){
   return this.current
 }
-
 createAccount(create){
    const promise = new Promise((resolve, reject) => {
      this.afAuth.auth.createUserWithEmailAndPassword(create.email, create.password).catch(function(error) {
@@ -37,14 +36,12 @@ createAccount(create){
    });
  });
 };
-
 login(user: Login) {
  this.afAuth.auth.signInWithEmailAndPassword(user.username, user.password).catch(function(error) {
    let errorMessage = error.message;
    alert(errorMessage)
  });
 };
-
 logout(){
   const user = firebase.auth().currentUser;
   this.recentLogin = user.uid
@@ -52,12 +49,10 @@ logout(){
   this.recentLogins.emit(this.recentLogin);
   this.afAuth.auth.signOut();
 };
-
 currentUserInfo(){
   const user = firebase.auth().currentUser;
   console.log(user);
 }
-
 userinfo(){
   const user = firebase.auth().currentUser.email;
   return user;

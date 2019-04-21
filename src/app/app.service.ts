@@ -20,6 +20,10 @@ export class AppService {
   private basePath:string = '/uploads';
   uploads: FirebaseListObservable<Upload[]>;
 
+  private saveFileData(upload: Upload) {
+    this.database.list(`${this.basePath}/`).push(upload);
+  }
+
   pushUpload(upload: Upload) {
     let storageRef = firebase.storage().ref();
     this.user.subscribe(user => {
@@ -29,7 +33,6 @@ export class AppService {
       }
     });
     let uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
-
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) =>  {
         upload.progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
@@ -46,9 +49,6 @@ export class AppService {
       }
     );
   }
-  private saveFileData(upload: Upload) {
-    this.database.list(`${this.basePath}/`).push(upload);
-  }
   getUsers(){
     return this.profile;
   }
@@ -62,7 +62,6 @@ export class AppService {
     let root = firebase.database().ref();
     root.child('users').child(userId).set(addNewAccount);
   }
-
   getUserById(userId: string){
     return this.database.object('users/' + userId);
   }

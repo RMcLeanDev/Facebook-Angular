@@ -1,13 +1,21 @@
 <app-header></app-header>
 <div class="all">
   <div class="profile">
-    <h1>Profile banner and image</h1>
-    <h1><img class="userImage" src="{{(userDisplay | async)?.profileImg}}" alt="">{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
-    <p (click)="updateProfileImage()">Update Image?</p>
+    <div class="banner">
+      <img src="../assets/images/bannerbg.jpg" alt="">
+    </div>
+    <div class="profileImg">
+      <img class="userImage" src="{{(userDisplay | async)?.profileImg}}" alt="">
+      <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
+      <p (click)="updateProfileImage()">Update Image?</p>
+    </div>
+    <div class="filler">
+
+    </div>
   </div>
   <div class="main">
     <div class="left">
-      <h1>Intro and photos</h1>
+      <h1>Photos</h1>
       <div class="userImgs" *ngFor="let image of images | async">
         <img src="{{image.url}}" alt="">
       </div>

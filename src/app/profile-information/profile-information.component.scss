@@ -5,9 +5,43 @@
     margin-left: 5%;
     background-color: #eee;
     margin-top: -21px;
-    .userImage{
-      width: 60px;
-      height: 60px;
+    .banner{
+      z-index: -1;
+      height: 315px;
+      width: 851px;
+      overflow: hidden;
+      display: grid;
+      align-content: center;
+      border: 1px solid black;
+      img{
+        width: 851px;
+        height: auto;
+      }
+    }
+    .profileImg{
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr;
+      height: 172px;
+      width: 851px;
+      overflow: hidden;
+      position: absolute;
+      margin-top: -142px;
+      margin-left: 15px;
+      .userImage{
+        width: auto;
+        height: 158px;
+        border-radius: 168px;
+        border: 4px solid white;
+        box-shadow: 0 0 0 1pt #ddd;
+        margin: 3px;
+      }
+    }
+    .filler{
+      height: 44px;
+      width: 100%;
+      background-color: white;
+      border: 1px solid #ccc;
+      margin-bottom: 50px;
     }
   }
   .main {
@@ -28,5 +62,17 @@
       height: 50px;
       width: auto;
     }
+  }
+}
+
+.imagestuff{
+  margin-left: 300px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-top: 50px;
+  .imageitem{
+    display: flex;
+    justify-content: center;
   }
 }
