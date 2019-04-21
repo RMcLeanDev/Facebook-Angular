@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-newprofileimage #newprofileimage></app-newprofileimage>
 <div class="all">
   <div class="information">
     <div class="profile">
@@ -8,7 +9,7 @@
       <div class="profileOnBanner">
         <div class="profileImg">
           <img src="{{(userDisplay | async)?.profileImg}}" alt="">
-          <div class="update">
+          <div class="update" (click)="newprofileimage.open()">
             <img src="../assets/icon/whiteCamera.png" alt="">
             <p>Update</p>
           </div>
@@ -34,4 +35,3 @@
   </div>
 </div>
 <app-online-friends></app-online-friends>
-<app-newprofileimage></app-newprofileimage>

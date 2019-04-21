@@ -15,7 +15,7 @@ export class NewprofileimageComponent implements OnInit {
   currentUpload: Upload;
   uid;
   constructor(private http: HttpClient, private upSvc: AppService, public authService: AuthService) { }
-
+  updateImagePage=true;
   ngOnInit() {
     firebase.storage().ref()
     this.authService.user.subscribe(user => {
@@ -33,5 +33,11 @@ export class NewprofileimageComponent implements OnInit {
     let file = this.selectedFile.item(0)
     this.currentUpload = new Upload(file);
     this.upSvc.pushUpload(this.currentUpload)
+  }
+  open(){
+    this.updateImagePage=true;
+  }
+  close(){
+    this.updateImagePage = false;
   }
 }

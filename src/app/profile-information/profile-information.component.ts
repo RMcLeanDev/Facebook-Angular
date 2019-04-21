@@ -19,7 +19,6 @@ export class ProfileInformationComponent implements OnInit {
   images;
 
   constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService) { }
-
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
       this.userId = urlParamaters['id'];

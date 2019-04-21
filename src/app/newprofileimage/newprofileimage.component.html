@@ -1,3 +1,8 @@
-<h1>Change Profile Image</h1>
-<input type="file" (change)="onFileSelected($event)">
-<button type="button" (click)="onUpload()">Upload</button>
+<div class="all" *ngIf="updateImagePage">
+  <div class="update">
+    <p (click)="close()">x</p>
+    <h1>Change Profile Image</h1>
+    <input type="file" (change)="onFileSelected($event)">
+    <button type="button" (click)="onUpload()">Upload</button>
+  </div>
+</div>
