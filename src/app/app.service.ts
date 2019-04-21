@@ -11,7 +11,7 @@ export class AppService {
   profile: FirebaseListObservable<any[]>;
   current = firebase.auth().currentUser;
   user: Observable<firebase.User>;
-  uid;
+  uid: any;
 
   constructor(private database: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.profile = database.list('users');
