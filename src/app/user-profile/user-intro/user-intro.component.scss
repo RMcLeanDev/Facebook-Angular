@@ -52,18 +52,28 @@
       }
     }
   }
-  .main{
-    display: grid;
-    grid-template-columns: 101px 101px 101px;
-    grid-gap: 4px;
-    margin-left: 5px;
-    .userImgs{
-      width: 101px;
-      height: 101px;
-      overflow: hidden;
-    }
-    img{
-      height: 101px;
+  .information{
+    margin: auto;
+    margin-top: 15px;
+    width: 93%;
+    .flex{
+      display: flex;
+      align-items: center;
+      p{
+        font-size: 12px;
+      }
+      img{
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+      }
+      .blue{
+        color: #365899;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
