@@ -4,7 +4,10 @@
   <div class="information">
     <app-user-profile-top (openNewImage)="openNewImage($event)"></app-user-profile-top>
     <div class="main">
-      <app-user-images></app-user-images>
+      <div class="left">
+        <app-user-intro></app-user-intro>
+        <app-user-images></app-user-images>
+      </div>
       <div class="right">
         <h1>create a post & user posts</h1>
       </div>

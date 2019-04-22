@@ -11,6 +11,10 @@
     display: grid;
     grid-template-columns: 323px 515px;
     grid-gap: 13px;
+    .left{
+      display: grid;
+      grid-gap: 13px;
+    }
     .right{
         background-color: #eee;
         border: 1px solid red;
