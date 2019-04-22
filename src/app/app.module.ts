@@ -20,6 +20,7 @@ import { NewprofileimageComponent } from './user-profile/newprofileimage/newprof
 import { UserProfileTopComponent } from './user-profile/user-profile-top/user-profile-top.component';
 import { UserImagesComponent } from './user-profile/user-images/user-images.component';
 import { UserIntroComponent } from './user-profile/user-intro/user-intro.component';
+import { UserPostsComponent } from './user-profile/user-posts/user-posts.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -43,6 +44,7 @@ export const firebaseConfig = {
     UserProfileTopComponent,
     UserImagesComponent,
     UserIntroComponent,
+    UserPostsComponent,
   ],
   imports: [
     BrowserModule,
