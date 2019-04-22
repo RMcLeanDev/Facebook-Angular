@@ -1,0 +1,55 @@
+.all{
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 3px;
+  .title{
+    width: 100%;
+    margin: 0 12px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    .titleName{
+      width: 258px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      justify-content: space-between;
+      p{
+        font-size: 18px;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+      h5{
+        font-size: 12px;
+        color: #365899;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+    img{
+      width: 26px;
+      height: 26px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  .main{
+    display: grid;
+    grid-template-columns: 101px 101px 101px;
+    grid-gap: 4px;
+    margin-left: 5px;
+    .userImgs{
+      width: 101px;
+      height: 101px;
+      overflow: hidden;
+    }
+    img{
+      height: 101px;
+    }
+  }
+}

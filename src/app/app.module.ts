@@ -16,8 +16,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
 import { OnlineFriendsComponent } from './online-friends/online-friends.component';
-import { NewprofileimageComponent } from './newprofileimage/newprofileimage.component';
-import { UserProfileTopComponent } from './user-profile-top/user-profile-top.component';
+import { NewprofileimageComponent } from './user-profile/newprofileimage/newprofileimage.component';
+import { UserProfileTopComponent } from './user-profile/user-profile-top/user-profile-top.component';
+import { UserImagesComponent } from './user-profile/user-images/user-images.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -39,6 +40,7 @@ export const firebaseConfig = {
     OnlineFriendsComponent,
     NewprofileimageComponent,
     UserProfileTopComponent,
+    UserImagesComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,12 +4,7 @@
   <div class="information">
     <app-user-profile-top (openNewImage)="openNewImage($event)"></app-user-profile-top>
     <div class="main">
-      <div class="left">
-        <h1>Photos</h1>
-        <div class="userImgs" *ngFor="let image of images | async">
-          <img src="{{image.url}}" alt="">
-        </div>
-      </div>
+      <app-user-images></app-user-images>
       <div class="right">
         <h1>create a post & user posts</h1>
       </div>

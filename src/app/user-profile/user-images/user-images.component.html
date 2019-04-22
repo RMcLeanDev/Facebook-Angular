@@ -1,0 +1,14 @@
+<div class="all">
+  <div class="title">
+    <img src="../../assets/icon/photos.png" alt="">
+    <div class="titleName">
+      <p>Photos</p>
+      <h5>Add Photo</h5>
+    </div>
+  </div>
+  <div class="main">
+    <div class="userImgs" *ngFor="let image of images | async">
+      <img src="{{image.url}}" alt="">
+    </div>
+  </div>
+</div>

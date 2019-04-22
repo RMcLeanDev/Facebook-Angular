@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
-import { User } from '../model/login.model';
-import { AppService } from '../app.service';
+import { User } from '../../model/login.model';
+import { AppService } from '../../app.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 

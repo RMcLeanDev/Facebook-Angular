@@ -1,9 +1,9 @@
 import { Component, OnInit, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Upload } from '../upload';
-import { AppService } from '../app.service';
+import { Upload } from '../../upload';
+import { AppService } from '../../app.service';
 import * as firebase from 'firebase';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-newprofileimage',
