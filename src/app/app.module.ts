@@ -12,7 +12,7 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FeedComponent } from './feed/feed.component';
-import { ProfileInformationComponent } from './profile-information/profile-information.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
 import { OnlineFriendsComponent } from './online-friends/online-friends.component';
@@ -34,7 +34,7 @@ export const firebaseConfig = {
     NewAccountComponent,
     HomeComponent,
     FeedComponent,
-    ProfileInformationComponent,
+    UserProfileComponent,
     HeaderComponent,
     OnlineFriendsComponent,
     NewprofileimageComponent,

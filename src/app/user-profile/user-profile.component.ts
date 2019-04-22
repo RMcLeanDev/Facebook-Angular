@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-information',
-  templateUrl: './profile-information.component.html',
-  styleUrls: ['./profile-information.component.scss'],
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.scss'],
   providers: [AppService]
 })
-export class ProfileInformationComponent implements OnInit {
+export class UserProfileComponent implements OnInit {
   userId: string;
   userDisplay;
   images;
