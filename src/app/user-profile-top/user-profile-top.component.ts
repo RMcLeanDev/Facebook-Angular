@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 import { User } from '../model/login.model';
@@ -7,18 +7,17 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile-information',
-  templateUrl: './profile-information.component.html',
-  styleUrls: ['./profile-information.component.scss'],
-  providers: [AppService]
+  selector: 'app-user-profile-top',
+  templateUrl: './user-profile-top.component.html',
+  styleUrls: ['./user-profile-top.component.scss']
 })
-export class ProfileInformationComponent implements OnInit {
+export class UserProfileTopComponent implements OnInit {
+  @Output() openNewImage = new EventEmitter();
   userId: string;
   userDisplay;
   images;
-  newProfileImage = false;
-
   constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService) { }
+
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
       this.userId = urlParamaters['id'];
@@ -26,10 +25,8 @@ export class ProfileInformationComponent implements OnInit {
     this.userDisplay = this.appService.getUserById(this.userId);
     this.images = this.appService.getUserImages(this.userId);
   }
-  openNewImage(event){
-    this.newProfileImage = event
-  }
-  closeNewImage(event){
-    this.newProfileImage = event;
+  open(event){
+    event = true;
+    this.openNewImage.emit(event);
   }
 }

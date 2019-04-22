@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Upload } from '../upload';
 import { AppService } from '../app.service';
@@ -11,11 +11,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./newprofileimage.component.scss']
 })
 export class NewprofileimageComponent implements OnInit {
+  @Output() closeNewImage = new EventEmitter;
   selectedFile: FileList;
   currentUpload: Upload;
   uid;
+  updateImagePage = true;
   constructor(private http: HttpClient, private upSvc: AppService, public authService: AuthService) { }
-  updateImagePage=false;
   ngOnInit() {
     firebase.storage().ref()
     this.authService.user.subscribe(user => {
@@ -34,10 +35,8 @@ export class NewprofileimageComponent implements OnInit {
     this.currentUpload = new Upload(file);
     this.upSvc.pushUpload(this.currentUpload)
   }
-  open(){
-    this.updateImagePage=true;
-  }
-  close(){
-    this.updateImagePage = false;
+  close(event){
+    event = false
+    this.closeNewImage.emit(event);
   }
 }

@@ -1,0 +1,165 @@
+.profile{
+  width: 851px;
+  margin-top: -21px;
+  .banner{
+    height: 315px;
+    width: 851px;
+    overflow: hidden;
+    display: grid;
+    align-content: center;
+    border: 1px solid black;
+    &:hover{
+      .updateBanner{
+        overflow: hidden;
+        cursor: pointer;
+        width: 150px;
+        height: 23px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid white;
+        display: grid;
+        grid-template-columns: 25px auto;
+        img{
+          height: 17px;
+          width: 17px;
+          opacity: .7;
+          padding-left: 5px;
+          padding-top: 3px;
+        }
+        p{
+          display: block;
+          color: white;
+          margin: auto;
+          font-size: 13px;
+        }
+      }
+    }
+    .updateBanner{
+      transition: .1s linear;
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      top: 65px;
+      margin-left: 25px;
+      img {
+        transition: .1s linear;
+        padding-left: 5px;
+        padding-top: 1px;
+        width: 23px;
+        height: 23px;
+        opacity: .5;
+      }
+      p{
+        display: none;
+      }
+    }
+    img{
+      width: 851px;
+      height: auto;
+    }
+  }
+  .profileOnBanner{
+    display: grid;
+    grid-template-columns: 190px 1fr 1fr;
+    height: 172px;
+    width: 851px;
+    position: absolute;
+    margin-top: -152px;
+    margin-left: 15px;
+    h1{
+      color: white;
+      text-shadow: -1px -1px 2px black, 1px 1px 2px black, -1px 1px 2px black, 1px -1px 2px black;
+      align-self: flex-end;
+      margin-bottom: 45px;
+      margin-left: 8px;
+      font-size: 24px;
+    }
+    .profileImg{
+      display: grid;
+      overflow: hidden;
+      width: 168px;
+      height: 168px;
+      overflow: hidden;
+      border-radius: 168px;
+      border: 4px solid white;
+      box-shadow: 0 0 0 1pt #ddd;
+      margin: 3px;
+      background-color: white;
+      align-content: center;
+      justify-content: center;
+      &:hover {
+        .update{
+          opacity: .5;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      .update{
+        align-self: flex-end;
+        transition: .2s linear;
+        margin-top: 84px;
+        position: fixed;
+        width: 168px;
+        height: 84px;
+        border-bottom-left-radius: 168px;
+        border-bottom-right-radius: 168px;
+        background-color: black;
+        opacity: 0;
+        text-align: center;
+        &:hover{
+          opacity: .8;
+          cursor: pointer;
+        }
+        img{
+          transition: .1s linear;
+          margin-top: 15px;
+          width: 50px;
+          height: 50px;
+        }
+        p{
+          color: white;
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+      img{
+        width: auto;
+        height: 168px;
+      }
+    }
+    .profileActions{
+      width: 300px;
+      height: 26px;
+      display: flex;
+      align-self: flex-end;
+      margin-bottom: 45px;
+      justify-content: flex-end;
+      p{
+        padding: 0;
+        margin: 0;
+        margin-top: 2px;
+        padding: 3px 5px;
+      }
+      .updateInfo, .activityLog{
+        width: 103px;
+        text-align: center;
+        font-size: 13px;
+        background-color: #eee;
+      }
+      .activityLog {
+        width: 164px;
+        margin-left: 12px;
+      }
+    }
+  }
+  .profileNav{
+    height: 44px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}

@@ -1,37 +1,8 @@
 <app-header></app-header>
-<app-newprofileimage #newprofileimage></app-newprofileimage>
+<app-newprofileimage (closeNewImage)="closeNewImage($event)" *ngIf="newProfileImage"></app-newprofileimage>
 <div class="all">
   <div class="information">
-    <div class="profile">
-      <div class="banner">
-        <img src="../assets/images/bannerbg.jpg" alt="">
-        <div class="updateBanner">
-          <img src="../assets/icon/whiteCamera.png" alt="">
-          <p>Update Cover Photo</p>
-        </div>
-      </div>
-      <div class="profileOnBanner">
-        <div class="profileImg">
-          <img src="{{(userDisplay | async)?.profileImg}}" alt="">
-          <div class="update" (click)="newprofileimage.open()">
-            <img src="../assets/icon/whiteCamera.png" alt="">
-            <p>Update</p>
-          </div>
-        </div>
-        <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
-        <div class="profileActions">
-          <div class="updateInfo">
-            <p>Update Info</p>      
-          </div>
-          <div class="activityLog">
-            <p>Activity Log</p>
-          </div>
-        </div>
-      </div>
-      <div class="profileNav">
-
-      </div>
-    </div>
+    <app-user-profile-top (openNewImage)="openNewImage($event)"></app-user-profile-top>
     <div class="main">
       <div class="left">
         <h1>Photos</h1>
