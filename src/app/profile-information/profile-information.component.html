@@ -19,7 +19,14 @@
           </div>
         </div>
         <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
-        <p>update profile</p>
+        <div class="profileActions">
+          <div class="updateInfo">
+            <p>Update Info</p>      
+          </div>
+          <div class="activityLog">
+            <p>Activity Log</p>
+          </div>
+        </div>
       </div>
       <div class="profileNav">
 

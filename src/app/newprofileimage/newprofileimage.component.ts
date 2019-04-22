@@ -15,7 +15,7 @@ export class NewprofileimageComponent implements OnInit {
   currentUpload: Upload;
   uid;
   constructor(private http: HttpClient, private upSvc: AppService, public authService: AuthService) { }
-  updateImagePage=true;
+  updateImagePage=false;
   ngOnInit() {
     firebase.storage().ref()
     this.authService.user.subscribe(user => {
