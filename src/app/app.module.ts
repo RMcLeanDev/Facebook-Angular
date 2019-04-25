@@ -22,7 +22,7 @@ import { UserImagesComponent } from './user-profile/user-images/user-images.comp
 import { UserIntroComponent } from './user-profile/user-intro/user-intro.component';
 import { UserPostsComponent } from './user-profile/user-posts/user-posts.component';
 import { ImageViewComponent } from './user-profile/image-view/image-view.component';
-import { BannerImageUpdateComponent } from './banner-image-update/banner-image-update.component';
+import { BannerImageUpdateComponent } from './user-profile/banner-image-update/banner-image-update.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,

@@ -20,6 +20,7 @@ export class UserProfileComponent implements OnInit {
   newProfileImage = false;
   masterSelectedImage;
   selectedImageView = false;
+  newBannerImage = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService, private imageView: ImageViewComponent) { }
   ngOnInit() {
@@ -41,5 +42,11 @@ export class UserProfileComponent implements OnInit {
   }
   closeImage(event){
     this.selectedImageView = event;
+  }
+  openBannerUpdate(event){
+    this.newBannerImage = event;
+  }
+  closeBannerUpdate(event){
+    this.newBannerImage = event;
   }
 }

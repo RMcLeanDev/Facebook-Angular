@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class UserProfileTopComponent implements OnInit {
   @Output() openNewImage = new EventEmitter();
+  @Output() openBannerUpdate = new EventEmitter();
   userId: string;
   userDisplay;
   images;
@@ -28,5 +29,9 @@ export class UserProfileTopComponent implements OnInit {
   open(event){
     event = true;
     this.openNewImage.emit(event);
+  }
+  updateBanner(event){
+    event = true
+    this.openBannerUpdate.emit(event)
   }
 }

@@ -1,6 +1,6 @@
 <div class="profile">
   <div class="banner">
-    <img src="https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/defaultBanner.jpg?alt=media&token=a0846ead-835f-4c3b-b791-378456e016ea" alt="">
+    <img src="{{(userDisplay | async)?.bannerImg}}" alt="">
     <div class="updateBanner" (click)="updateBanner()">
       <img src="../assets/icon/whiteCamera.png" alt="">
       <p>Update Cover Photo</p>

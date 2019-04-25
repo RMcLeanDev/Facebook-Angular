@@ -1,7 +1,7 @@
-<div class="all" *ngIf="updateImagePage">
+<div class="all" *ngIf="bannerUpdate">
   <div class="update">
     <p (click)="close()">x</p>
-    <h1>Change Profile Image</h1>
+    <h1>Change Banner Image</h1>
     <input type="file" (change)="onFileSelected($event)">
     <button type="button" (click)="onUpload()">Upload</button>
   </div>

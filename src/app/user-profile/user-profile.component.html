@@ -1,9 +1,10 @@
 <app-image-view [masterSelectedImage]="masterSelectedImage" (closeImage)="closeImage($event)" *ngIf="selectedImageView"></app-image-view>
 <app-header></app-header>
 <app-newprofileimage (closeNewImage)="closeNewImage($event)" *ngIf="newProfileImage"></app-newprofileimage>
+<app-banner-image-update (closeBannerUpdate)="closeBannerUpdate($event)" *ngIf="newBannerImage"></app-banner-image-update>
 <div class="all">
   <div class="information">
-    <app-user-profile-top (openNewImage)="openNewImage($event)"></app-user-profile-top>
+    <app-user-profile-top (openBannerUpdate)="openBannerUpdate($event)" (openNewImage)="openNewImage($event)"></app-user-profile-top>
     <div class="main">
       <div class="left">
         <app-user-intro></app-user-intro>
