@@ -1,13 +1,12 @@
 .feed{
-  width: 97%;
-  padding-left: 3%;
+  width: 100%;
   padding-top: 10px;
   background-color: #e9ebee;
   .main{
     width: 1018px;
     display: grid;
     margin: auto;
-    margin-right: 282px;
+    padding-right: 210px;
     grid-template-columns: 180px 500px 308px;
     grid-gap: 10px;
     .left{

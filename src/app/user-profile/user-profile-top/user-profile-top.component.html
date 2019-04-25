@@ -1,7 +1,7 @@
 <div class="profile">
   <div class="banner">
-    <img src="../assets/images/bannerbg.jpg" alt="">
-    <div class="updateBanner">
+    <img src="https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/defaultBanner.jpg?alt=media&token=a0846ead-835f-4c3b-b791-378456e016ea" alt="">
+    <div class="updateBanner" (click)="updateBanner()">
       <img src="../assets/icon/whiteCamera.png" alt="">
       <p>Update Cover Photo</p>
     </div>
@@ -14,7 +14,7 @@
         <p>Update</p>
       </div>
     </div>
-    <h1>{{(userDisplay | async)?.firstname}} {{(userDisplay | async)?.lastname}}</h1>
+    <h1>{{(userDisplay | async)?.username}}</h1>
     <div class="profileActions">
       <div class="updateInfo">
         <p>Update Info</p>

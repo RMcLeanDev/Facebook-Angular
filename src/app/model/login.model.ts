@@ -1,5 +1,5 @@
 export class User {
-  constructor(public profileImg: string, public firstname: string,public lastname: string,public email: string, public password: string, public gender: string, public age: number,public images: object, public bannerImg: string, public banners: object) {}
+  constructor(public profileImg: string, public firstname: string,public lastname: string,public email: string, public password: string, public gender: string, public age: number,public images: object, public bannerImg: string, public banners: object, public username: string) {}
 }
 
 export class Login {
