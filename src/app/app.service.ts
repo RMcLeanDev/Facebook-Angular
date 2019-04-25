@@ -94,4 +94,9 @@ export class AppService {
     let userId = user.uid;
     firebase.database().ref().child(`users/${userId}/profileImg`).set(image);
   }
+  delete(img){
+    let user = firebase.auth().currentUser;
+    let userId = user.uid;
+    firebase.database().ref().child(`users/${userId}/images/${img}`).remove();
+  }
 }

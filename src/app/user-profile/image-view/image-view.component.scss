@@ -39,5 +39,15 @@ $fbBlue: #365889;
     img{
       height: 50vh;
     }
+    button {
+      margin-top: 10px;
+      justify-self: center;
+      max-width: 150px;
+      border: 1px solid black;
+      text-decoration: none;
+      background-color: none;
+      outline: none;
+
+    }
   }
 }
