@@ -74,7 +74,6 @@
       font-size: 24px;
     }
     .profileImg{
-      display: grid;
       overflow: hidden;
       width: 168px;
       height: 168px;
@@ -96,12 +95,11 @@
         }
       }
       .update{
-        align-self: flex-end;
+        position: absolute;
         transition: .2s linear;
-        margin-top: 84px;
-        position: fixed;
         width: 168px;
         height: 84px;
+        margin-top: -87px;
         border-bottom-left-radius: 168px;
         border-bottom-right-radius: 168px;
         background-color: black;

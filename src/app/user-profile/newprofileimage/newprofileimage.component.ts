@@ -34,7 +34,7 @@ export class NewprofileimageComponent implements OnInit {
     let file = this.selectedFile.item(0)
     this.currentUpload = new Upload(file);
     this.upSvc.pushUpload(this.currentUpload)
-    this.updateImagePage = false;
+    this.closeNewImage.emit(false);
   }
   close(event){
     event = false
