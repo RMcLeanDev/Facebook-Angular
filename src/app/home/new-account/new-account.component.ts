@@ -4,6 +4,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { AppService } from './../../app.service';
 import { AuthService } from './../../auth.service';
 import { Router } from '@angular/router';
+import { HomeComponent } from '../home.component';
 
 @Component({
   selector: 'app-new-account',
@@ -12,8 +13,7 @@ import { Router } from '@angular/router';
   providers: [AppService, AuthService]
 })
 export class NewAccountComponent {
-
-  constructor(private appService: AppService, public authService: AuthService, private router: Router) { }
+  constructor(private appService: AppService, public authService: AuthService, private router: Router, private home: HomeComponent) { }
 
   submitResult(result){
     console.log(result);
@@ -23,6 +23,9 @@ export class NewAccountComponent {
   profileId;
 
   addNewAccount(firstName: string, lastName:string, phoneOrEmail:string, newPassword: string, date: string, gender: string){
+    console.log("this")
+    this.home.loadingScreen();
+    console.log("that")
     const today = new Date();
     let birthday = new Date(date);
     let age = today.getFullYear() - birthday.getFullYear();
@@ -47,12 +50,9 @@ export class NewAccountComponent {
     }
     let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, "***", gender, finalAge, {'default':{url: this.profileImage}});
     let emailInfo = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, null);
-    console.log(newUser);
-      setTimeout(() => {
-        this.appService.addUser(newUser);
-      }, 5000)
-      this.authService.createAccount(emailInfo);
-      this.router.navigate(['feed']);
-    alert("Thank you for making a account you can now log in");
+    setTimeout(() => {
+      this.appService.addUser(newUser);
+    }, 7000)
+    this.authService.createAccount(emailInfo);
   }
 }

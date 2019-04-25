@@ -1,3 +1,4 @@
+<app-image-view [masterSelectedImage]="masterSelectedImage" (closeImage)="closeImage($event)" *ngIf="selectedImageView"></app-image-view>
 <app-header></app-header>
 <app-newprofileimage (closeNewImage)="closeNewImage($event)" *ngIf="newProfileImage"></app-newprofileimage>
 <div class="all">
@@ -6,7 +7,7 @@
     <div class="main">
       <div class="left">
         <app-user-intro></app-user-intro>
-        <app-user-images></app-user-images>
+        <app-user-images (selectedImage)="selectedImage($event)"></app-user-images>
       </div>
       <div class="right">
         <app-user-posts></app-user-posts>

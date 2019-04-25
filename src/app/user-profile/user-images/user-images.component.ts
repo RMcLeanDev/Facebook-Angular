@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { AppService } from '../../app.service';
+import { ImageViewComponent } from '../image-view/image-view.component';
 
 @Component({
   selector: 'app-user-images',
@@ -8,6 +9,7 @@ import { AppService } from '../../app.service';
   styleUrls: ['./user-images.component.scss']
 })
 export class UserImagesComponent implements OnInit {
+  @Output() selectedImage = new EventEmitter();
   userId;
   images;
 
@@ -19,5 +21,7 @@ export class UserImagesComponent implements OnInit {
     });
     this.images = this.appService.getUserImages(this.userId);
   }
-
+  detail(img){
+    this.selectedImage.emit(img);
+  }
 }

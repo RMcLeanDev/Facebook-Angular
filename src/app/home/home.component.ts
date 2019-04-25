@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   users: FirebaseListObservable<any[]>;
   masterRecentLogin: RecentLogin[] = [];
   constructor(private router: Router, private appService: AppService) {}
-
+ creatingProfile = false;
   ngOnInit() {
     this.users = this.appService.getUsers();
   }
@@ -25,5 +25,11 @@ export class HomeComponent implements OnInit {
   recentLogin(person){
     console.log(person);
 
+  }
+  loadingScreen(){
+    this.creatingProfile = true;
+    setTimeout(() => {
+      this.creatingProfile = false;
+    },7000)
   }
 }

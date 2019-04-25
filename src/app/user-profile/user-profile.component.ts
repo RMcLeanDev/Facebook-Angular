@@ -5,20 +5,23 @@ import { User } from '../model/login.model';
 import { AppService } from '../app.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
+import { ImageViewComponent } from './image-view/image-view.component';
 
 @Component({
   selector: 'app-profile-information',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss'],
-  providers: [AppService]
+  providers: [AppService, ImageViewComponent]
 })
 export class UserProfileComponent implements OnInit {
   userId: string;
   userDisplay;
   images;
   newProfileImage = false;
+  masterSelectedImage;
+  selectedImageView = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService, private imageView: ImageViewComponent) { }
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
       this.userId = urlParamaters['id'];
@@ -31,5 +34,12 @@ export class UserProfileComponent implements OnInit {
   }
   closeNewImage(event){
     this.newProfileImage = event;
+  }
+  selectedImage(event){
+    this.masterSelectedImage = event
+    this.selectedImageView = true;
+  }
+  closeImage(event){
+    this.selectedImageView = event;
   }
 }

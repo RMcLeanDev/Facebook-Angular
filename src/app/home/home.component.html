@@ -1,3 +1,7 @@
+<div class="creating" *ngIf="creatingProfile">
+  <img src="../../assets/images/facebookLogo.png" alt="">
+  <h1>Creating Profile</h1>
+</div>
 <div class="login-header">
   <h1>facebook</h1>
   <app-login-header (sendLogin)="login($event)"></app-login-header>
@@ -7,7 +11,7 @@
   <div class="newAccount">
     <h1>Create a New Account</h1>
     <p>It's free and always will be.</p>
-    <app-new-account (sendUser)="addUser($event)"></app-new-account>
+    <app-new-account></app-new-account>
     <p class="createPageBand"><b><span class="blues">Create a Page</span> for a celebrity, band or business.</b></p>
   </div>
 </div>

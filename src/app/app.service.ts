@@ -58,11 +58,15 @@ export class AppService {
   addUser(addNewAccount){
     let user = firebase.auth().currentUser;
     let userId = user.uid;
-    console.log(userId);
     let root = firebase.database().ref();
     root.child('users').child(userId).set(addNewAccount);
   }
   getUserById(userId: string){
     return this.database.object('users/' + userId);
+  }
+  updateProfileImage(image){
+    let user = firebase.auth().currentUser;
+    let userId = user.uid;
+    firebase.database().ref().child(`users/${userId}/profileImg`).set(image);
   }
 }

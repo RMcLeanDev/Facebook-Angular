@@ -1,6 +1,29 @@
 $fbGray: #333333;
 $fbBlue: #365889;
-
+@keyframes pulse{
+  0%{box-shadow: 0px 0px 10px $fbBlue}
+  50%{box-shadow: 0px 0px 60px $fbBlue}
+  100%{box-shadow: 0px 0px 10px $fbBlue}
+}
+.creating {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 4;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  img{
+    border-radius: 15px;
+    animation: pulse 1s linear infinite;
+    width: 70vw;
+    height: auto;
+  }
+  h1 {
+    text-align: center;
+  }
+}
 .login-header {
   width: 100%;
   height: 83px;
