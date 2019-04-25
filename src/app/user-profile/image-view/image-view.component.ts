@@ -26,5 +26,6 @@ export class ImageViewComponent implements OnInit {
 
   updateProfileImage(){
     this.appService.updateProfileImage(this.masterSelectedImage.url)
+    this.closeImage.emit(false);
   }
 }
