@@ -7,6 +7,7 @@
     display: grid;
     align-content: center;
     border: 1px solid black;
+    border-top: none;
     background-color: white;
     &:hover{
       .updateBanner{
@@ -171,9 +172,36 @@
     height: 44px;
     width: 100%;
     background-color: white;
-    border: 1px solid #ccc;
     margin-bottom: 13px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    border: 1px solid #ccc;
+    border-top: none;
+    .information{
+      display: flex;
+      margin-left: 210px;
+      height: 100%;
+      align-items: center;
+      border-left: 1px solid #eee;
+      .numOfFriends{
+        color: #89919C;
+        font-size: 12px;
+      }
+      .item{
+        height: 100%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #eee;
+        &:hover {
+          cursor: pointer;
+          background-color: #eee;
+        }
+        p{
+          color: #365889;
+          padding: 0px 20px;
+        }
+      }
+    }
   }
 }
