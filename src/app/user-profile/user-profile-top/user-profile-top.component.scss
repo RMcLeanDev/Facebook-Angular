@@ -59,9 +59,9 @@
   }
   .profileOnBanner{
     display: grid;
-    grid-template-columns: 190px 1fr 1fr;
+    grid-template-columns: 190px;
     height: 172px;
-    width: 851px;
+    width: 190px;
     position: absolute;
     margin-top: -152px;
     margin-left: 15px;
@@ -126,19 +126,35 @@
         height: 168px;
       }
     }
-    .profileActions{
-      width: 300px;
-      height: 26px;
+  }
+  .profileActions{
+    display: flex;
+    position: absolute;
+    margin-top: -42px;
+    width: 626px;
+    height: 26px;
+    display: flex;
+    margin-left: 210px;
+    align-items: center;
+    justify-content: space-between;
+    h1{
+      font-size: 24px;
+      color: white;
+      text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    }
+    p{
+      padding: 0;
+      margin: 0;
+      margin-top: 2px;
+      padding: 3px 5px;
+    }
+    .buttons{
       display: flex;
-      align-self: flex-end;
-      margin-bottom: 45px;
-      justify-content: flex-end;
-      p{
-        padding: 0;
-        margin: 0;
-        margin-top: 2px;
-        padding: 3px 5px;
-      }
+      justify-self: flex-end;
       .updateInfo, .activityLog{
         width: 103px;
         text-align: center;
