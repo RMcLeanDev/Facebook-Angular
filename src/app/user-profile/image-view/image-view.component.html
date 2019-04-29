@@ -1,12 +1,12 @@
 <div class="imageView">
   <div class="imageSection">
+    <h1 (click)="closeImageView()">&#10005;</h1>
     <div class="imageItem">
       <img src="{{masterSelectedImage.url}}" alt="">
       <div class="edit">
         <p (click)="updateProfileImage()">Use as Profile Picture</p>
         <p (click)="deleteImage(masterSelectedImage)">Delete?</p>
       </div>
-      <h1 (click)="closeImageView()">x</h1>
     </div>
     <div class="sidePanel">
       <div class="header">
