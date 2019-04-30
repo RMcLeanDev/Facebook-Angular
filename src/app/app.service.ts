@@ -78,7 +78,7 @@ export class AppService {
     return this.profile;
   }
   getUserImages(uid){
-    return this.database.list(`users/${uid}/images`)
+    return this.database.list(`users/${uid}/images`);
   }
   addUser(addNewAccount){
     let user = firebase.auth().currentUser;

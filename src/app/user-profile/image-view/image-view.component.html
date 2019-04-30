@@ -2,7 +2,7 @@
   <div class="imageSection">
     <h1 (click)="closeImageView()">&#10005;</h1>
     <div class="imageItem">
-      <img src="{{masterSelectedImage.url}}" alt="">
+      <img src="{{initial}}" alt="">
       <div class="edit">
         <p (click)="updateProfileImage()">Use as Profile Picture</p>
         <p (click)="deleteImage(masterSelectedImage)">Delete?</p>
@@ -18,4 +18,7 @@
       </div>
     </div>
   </div>
+  <button (click)="add()">+</button>
+  <button (click)="subtract()">-</button>
+  <button (click)="information()">lskdjf</button>
 </div>
