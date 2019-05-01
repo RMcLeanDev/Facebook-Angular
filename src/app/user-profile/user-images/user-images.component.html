@@ -7,11 +7,8 @@
     </div>
   </div>
   <div class="main">
-    <div class="userImgs" *ngFor="let image of images | async" (click)="detail(image)">
+    <div class="userImgs" *ngFor="let image of images" (click)="detail(image)">
       <img src="{{image.url}}" alt="">
     </div>
-  </div>
-  <div>
-    {{stuff}}
   </div>
 </div>

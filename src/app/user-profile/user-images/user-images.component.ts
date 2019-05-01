@@ -13,8 +13,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class UserImagesComponent implements OnInit {
   @Output() selectedImage = new EventEmitter();
   userId;
-  images;
-  stuff;
+  images = [];
 
   constructor(private route: ActivatedRoute, private appService: AppService, private database: AngularFireDatabase,) { }
 
@@ -22,7 +21,9 @@ export class UserImagesComponent implements OnInit {
     this.route.params.forEach((urlParamaters) => {
       this.userId = urlParamaters['id'];
     });
-    this.images = this.appService.getUserImages(this.userId);
+    let arr1 = [];
+    firebase.database().ref().child(`users/${this.userId}/images`).limitToLast(9).on('child_added', items => arr1.push(items.val()));
+    this.images = arr1;
   }
   detail(img){
     this.selectedImage.emit(img);

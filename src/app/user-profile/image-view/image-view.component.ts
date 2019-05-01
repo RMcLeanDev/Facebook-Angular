@@ -36,7 +36,6 @@ export class ImageViewComponent implements OnInit {
     let arr2
     this.images.forEach(function(element){
       arr2 = element
-      console.log(element);
       return arr2
     });
     this.slideShow = arr2

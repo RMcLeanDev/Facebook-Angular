@@ -36,8 +36,6 @@ export class HeaderComponent implements OnInit {
   }
 
   information(){
-    console.log(this.uid);
     this.router.navigate(['profile', this.uid])
-    console.log("Yeet");
   }
 }
