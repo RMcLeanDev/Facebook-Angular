@@ -10,6 +10,9 @@
     border-top: none;
     background-color: white;
     &:hover{
+      img{
+        cursor: pointer;
+      }
       .updateBanner{
         overflow: hidden;
         cursor: pointer;
@@ -86,6 +89,9 @@
       background-color: white;
       align-content: center;
       justify-content: center;
+      &:hover img{
+        cursor: pointer;
+      }
       &:hover {
         .update{
           opacity: .5;
