@@ -4,6 +4,7 @@ import { AppService } from '../../app.service';
 import { ImageViewComponent } from '../image-view/image-view.component';
 import * as firebase from 'firebase';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { UserProfileComponent } from '../user-profile.component';
 
 @Component({
   selector: 'app-user-images',
@@ -15,8 +16,9 @@ export class UserImagesComponent implements OnInit {
   userId;
   images = [];
   addImage = false;
+  owner;
 
-  constructor(private route: ActivatedRoute, private appService: AppService, private database: AngularFireDatabase,) { }
+  constructor(private route: ActivatedRoute, private appService: AppService, private database: AngularFireDatabase,private home: UserProfileComponent) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
@@ -25,6 +27,9 @@ export class UserImagesComponent implements OnInit {
     let arr1 = [];
     firebase.database().ref().child(`users/${this.userId}/images`).limitToLast(9).on('child_added', items => arr1.push(items.val()));
     this.images = arr1;
+    setTimeout(() => {
+      this.owner = this.home.admin
+    },1000)
   }
   detail(img){
     this.selectedImage.emit(img);

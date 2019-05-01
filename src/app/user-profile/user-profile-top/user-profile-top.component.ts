@@ -1,10 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 import { User } from '../../model/login.model';
 import { AppService } from '../../app.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
+import { UserProfileComponent } from '../user-profile.component';
 
 @Component({
   selector: 'app-user-profile-top',
@@ -17,7 +18,8 @@ export class UserProfileTopComponent implements OnInit {
   userId: string;
   userDisplay;
   images;
-  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService) { }
+  owner;
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService, private home: UserProfileComponent) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
@@ -25,6 +27,9 @@ export class UserProfileTopComponent implements OnInit {
     });
     this.userDisplay = this.appService.getUserById(this.userId);
     this.images = this.appService.getUserImages(this.userId);
+    setTimeout(() => {
+      this.owner = this.home.admin;
+    },1000)
   }
   open(event){
     event = true;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserProfileComponent } from '../user-profile.component';
 
 @Component({
   selector: 'app-user-intro',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-intro.component.scss']
 })
 export class UserIntroComponent implements OnInit {
-
-  constructor() { }
+  owner;
+  constructor(private home: UserProfileComponent) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.owner = this.home.admin
+    },1000)
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="profile">
   <div class="banner">
     <img src="{{(userDisplay | async)?.bannerImg}}" alt="">
-    <div class="updateBanner" (click)="updateBanner()">
+    <div *ngIf="owner" class="updateBanner" (click)="updateBanner()">
       <img src="../assets/icon/whiteCamera.png" alt="">
       <p>Update Cover Photo</p>
     </div>
@@ -9,7 +9,7 @@
   <div class="profileOnBanner">
     <div class="profileImg">
       <img src="{{(userDisplay | async)?.profileImg}}" alt="">
-      <div class="update" (click)="open()">
+      <div class="update" (click)="open()" *ngIf="owner">
         <img src="../assets/icon/whiteCamera.png" alt="">
         <p>Update</p>
       </div>
@@ -40,7 +40,7 @@
       <div class="item">
         <p>Photos</p>
       </div>
-      <div class="item">
+      <div class="item" *ngIf="owner">
         <p>Archive</p>
       </div>
       <div class="item">

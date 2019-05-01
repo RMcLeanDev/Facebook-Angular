@@ -36,6 +36,8 @@ export class HeaderComponent implements OnInit {
   }
 
   toProfile(){
-    this.router.navigate(['profile', this.uid])
+    this.router.navigate([`/profile/${this.uid}`]).then(function(){
+      location.reload()
+    });
   }
 }

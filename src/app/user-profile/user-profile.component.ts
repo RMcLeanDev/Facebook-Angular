@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 import { User } from '../model/login.model';
@@ -6,12 +6,14 @@ import { AppService } from '../app.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { ImageViewComponent } from './image-view/image-view.component';
+import * as firebase from 'firebase';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-profile-information',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss'],
-  providers: [AppService, ImageViewComponent]
+  providers: [AppService, ImageViewComponent, AuthService]
 })
 export class UserProfileComponent implements OnInit {
   userId: string;
@@ -21,12 +23,31 @@ export class UserProfileComponent implements OnInit {
   masterSelectedImage;
   selectedImageView = false;
   newBannerImage = false;
+  currentLoggedIn;
+  uid;
+  admin;
 
-  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService, private imageView: ImageViewComponent) { }
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private appService: AppService, private imageView: ImageViewComponent, private authService: AuthService) { }
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
       this.userId = urlParamaters['id'];
     });
+    this.authService.user.subscribe(user => {
+      if (user == null){
+        this.router.navigate(['']);
+      } else {
+        this.uid = user.uid;
+        this.currentLoggedIn = this.appService.getUserById(this.uid);
+        if (this.uid === this.userId){
+          this.admin = true;
+        } else{
+          this.admin = false;
+        }
+      }
+    });
+    setTimeout(() => {
+      console.log(this.admin)
+    }, 1000)
     this.userDisplay = this.appService.getUserById(this.userId);
     this.images = this.appService.getUserImages(this.userId);
   }

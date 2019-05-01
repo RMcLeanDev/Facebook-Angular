@@ -4,7 +4,7 @@
     <img src="../../assets/icon/photos.png" alt="">
     <div class="titleName">
       <p>Photos</p>
-      <h5 (click)="open()">Add Photo</h5>
+      <h5 *ngIf="owner" (click)="open()">Add Photo</h5>
     </div>
   </div>
   <div class="main">
