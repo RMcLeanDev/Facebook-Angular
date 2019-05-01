@@ -40,7 +40,6 @@ export class ImageViewComponent implements OnInit {
     });
     let keyItems;
     this.slideShow = arr2
-    console.log(this.slideShow)
     for (let i=0; i<this.slideShow.length; i++){
       if(this.masterSelectedImage.url === this.slideShow[i].url){
         this.initial = this.slideShow[i].url
@@ -51,7 +50,6 @@ export class ImageViewComponent implements OnInit {
     let newPosition
     for (let i = 0; i<this.slideShow.length; i++){
       if (this.initial === this.slideShow[i].url){
-        console.log(this.slideShow.length)
         if(i === this.slideShow.length -1){
           return this.initial = this.slideShow[0].url;
         }
