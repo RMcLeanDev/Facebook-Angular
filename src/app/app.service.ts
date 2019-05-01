@@ -46,7 +46,7 @@ export class AppService {
         upload.name = upload.file.name
         this.saveFileData(upload)
         firebase.database().ref().child(`users/${this.uid}/profileImg`).set(upload.url);
-        firebase.database().ref().child(`users/${this.uid}/images`).push({name:upload.name, url:upload.url, upload: new Date()})
+        firebase.database().ref().child(`users/${this.uid}/images`).push({name:upload.name, url:upload.url, upload: new Date(), likes: 0})
         console.log(new Date())
       }
     );
@@ -70,8 +70,9 @@ export class AppService {
       () => {
         upload.url = uploadTask.snapshot.downloadURL
         upload.name = upload.file.name
-        this.saveFileData(upload)
-        firebase.database().ref().child(`users/${this.uid}/images`).push({name:upload.name, url:upload.url})
+        let moment = require('moment')
+        let date = moment().format('YYYY, M, D, H:mm:ss');
+        firebase.database().ref().child(`users/${this.uid}/images`).push({name:upload.name, url:upload.url, timeStamp: date, likes: 0, timeUp: moment().format('x')})
       }
     );
   }

@@ -5,6 +5,7 @@ import { AuthService } from '../../auth.service';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { ActivatedRoute, Params} from '@angular/router';
+import { Moment } from 'moment';
 
 @Component({
   selector: 'app-image-view',
@@ -24,6 +25,7 @@ export class ImageViewComponent implements OnInit {
   images;
   slideShow;
   initial;
+  date;
 
   ngOnInit() {
     this.route.params.forEach((urlParamaters) => {
@@ -43,8 +45,12 @@ export class ImageViewComponent implements OnInit {
     for (let i=0; i<this.slideShow.length; i++){
       if(this.masterSelectedImage.url === this.slideShow[i].url){
         this.initial = this.slideShow[i].url
+        let moment = require('moment');
+        let information = parseInt(arr2[i].timeUp);
+        this.date = moment(information).fromNow();
       }
     }
+    console.log(this.date);
   }
   add(){
     let newPosition
