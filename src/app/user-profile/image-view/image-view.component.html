@@ -4,8 +4,17 @@
     <div class="imageItem">
       <img src="{{initial}}" alt="">
       <div class="edit">
-        <p (click)="updateProfileImage()">Use as Profile Picture</p>
-        <p (click)="deleteImage(masterSelectedImage)">Delete?</p>
+        <div class="top">
+          <button (click)="information()">lskdjf</button>
+        </div>
+        <div class="middle">
+          <h2 (click)="subtract()">&#60;</h2>
+          <h2 (click)="add()">&#62;</h2>
+        </div>
+        <div class="bottom">
+          <p (click)="updateProfileImage()">Use as Profile Picture</p>
+          <p (click)="deleteImage(masterSelectedImage)">Delete?</p>
+        </div>
       </div>
     </div>
     <div class="sidePanel">
@@ -18,7 +27,4 @@
       </div>
     </div>
   </div>
-  <button (click)="add()">+</button>
-  <button (click)="subtract()">-</button>
-  <button (click)="information()">lskdjf</button>
 </div>

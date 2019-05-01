@@ -5,9 +5,6 @@ $fbBlue: #365889;
   50%{box-shadow: 0px 0px 60px $fbBlue}
   100%{box-shadow: 0px 0px 10px white}
 }
-.keys {
-  color: white;
-}
 .imageView{
   overflow: hidden;
   position: fixed;
@@ -21,9 +18,10 @@ $fbBlue: #365889;
   .imageSection{
     display: grid;
     animation: 2s pulse linear infinite;
-    grid-template-columns: calc(90vw - 360px) 360px;
-    overflow: hidden;
+    grid-template-columns: auto 360px;
+    max-height: 90vh;
     max-width: 90vw;
+    min-width: 10vw;
     background-color: black;
     h1{
       position: absolute;
@@ -42,29 +40,64 @@ $fbBlue: #365889;
       }
     }
     .imageItem{
+      position: relative;
+      max-width: calc(90vw - 360px);
+      max-height: 90vh;
+      overflow: hidden;
       img{
-        width: 100%;
-        height: auto;
+        grid-column: 1;
+        max-width: calc(90vw - 360px);
+        max-height: 90vw;
       }
       .edit{
-        opacity: 0;
-        transition: .2s linear;
-        display: flex;
         position: absolute;
-        height: 100px;
-        margin-top: -100px;
-        width: calc(90vw - 360px);
-        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.8));
-        align-items: center;
-        justify-content: center;
-        p{
-          color: white;
-          margin: 0;
-          padding: 0;
-          margin-right: 20px;
-          &:hover{
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        display: grid;
+        transition: .2s linear;
+        background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0), rgba(0,0,0,.8));
+        .top{
+
+        }
+        .middle{
+          display: flex;
+          align-self: center;
+          justify-content: space-between;
+          margin: 0px 10px;
+          h2{
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
             cursor: pointer;
-            text-decoration: underline;
+            transition: .2s linear;
+            color: white;
+            opacity: .6;
+            font-size: 40px;
+            &:hover{
+              opacity: 1;
+            }
+          }
+        }
+        .bottom{
+          display: flex;
+          justify-self: center;
+          align-self: flex-end;
+          margin-bottom: 5px;
+          p{
+            transition: .2s linear;
+            color: white;
+            margin: 0;
+            padding: 0;
+            margin-right: 20px;
+            opacity: .6;
+            &:hover{
+              opacity: 1;
+              cursor: pointer;
+              text-decoration: underline;
+            }
           }
         }
       }
