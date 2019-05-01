@@ -85,7 +85,7 @@ export class ImageViewComponent implements OnInit {
   }
 
   updateProfileImage(){
-    this.appService.updateProfileImage(this.masterSelectedImage.url)
+    this.appService.updateProfileImage(this.initial)
     this.closeImage.emit(false);
   }
   deleteImage(image){
