@@ -14,6 +14,7 @@ export class UserImagesComponent implements OnInit {
   @Output() selectedImage = new EventEmitter();
   userId;
   images = [];
+  addImage = false;
 
   constructor(private route: ActivatedRoute, private appService: AppService, private database: AngularFireDatabase,) { }
 
@@ -27,5 +28,11 @@ export class UserImagesComponent implements OnInit {
   }
   detail(img){
     this.selectedImage.emit(img);
+  }
+  open(){
+    this.addImage = true;
+  }
+  closeNewImage(event){
+    this.addImage = event;
   }
 }

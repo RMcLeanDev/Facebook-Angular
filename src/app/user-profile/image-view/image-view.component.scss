@@ -45,8 +45,8 @@ $fbBlue: #365889;
       max-height: 90vh;
       overflow: hidden;
       img{
-        grid-column: 1;
         max-width: calc(90vw - 360px);
+        min-width: 10vw;
         max-height: 90vw;
       }
       .edit{

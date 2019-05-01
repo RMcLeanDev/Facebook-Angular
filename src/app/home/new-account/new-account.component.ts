@@ -24,9 +24,6 @@ export class NewAccountComponent {
   banner = 'https://firebasestorage.googleapis.com/v0/b/theclonedfacebook.appspot.com/o/defaultBanner.jpg?alt=media&token=a0846ead-835f-4c3b-b791-378456e016ea'
 
   addNewAccount(firstName: string, lastName:string, phoneOrEmail:string, newPassword: string, date: string, gender: string){
-    console.log("this")
-    this.home.loadingScreen();
-    console.log("that")
     const today = new Date();
     let birthday = new Date(date);
     let age = today.getFullYear() - birthday.getFullYear();
@@ -51,6 +48,7 @@ export class NewAccountComponent {
     }
     let newUser: User = new User(this.profileImage, firstName, lastName, phoneOrEmail, "***", gender, finalAge, {'default':{url: this.profileImage}}, this.banner, {'default': {url: this.banner}}, `${firstName} ${lastName}`);
     let emailInfo = new User(this.profileImage, firstName, lastName, phoneOrEmail, newPassword, gender, finalAge, null, null, null, null);
+    this.home.loadingScreen();
     setTimeout(() => {
       this.appService.addUser(newUser);
     }, 7000)

@@ -38,7 +38,9 @@ export class ImageViewComponent implements OnInit {
       arr2 = element
       return arr2
     });
+    let keyItems;
     this.slideShow = arr2
+    console.log(this.slideShow)
     for (let i=0; i<this.slideShow.length; i++){
       if(this.masterSelectedImage.url === this.slideShow[i].url){
         this.initial = this.slideShow[i].url
@@ -88,8 +90,13 @@ export class ImageViewComponent implements OnInit {
     this.appService.updateProfileImage(this.initial)
     this.closeImage.emit(false);
   }
-  deleteImage(image){
-    console.log(image.$key);
-    this.appService.delete(image.$key);
+  deleteImage(){
+    let imageKey
+    for (let i=0;i<this.slideShow.length; i++){
+      if(this.initial === this.slideShow[i].url){
+        imageKey = this.slideShow[i].$key;
+      }
+    }
+    this.appService.delete(imageKey);
   }
 }

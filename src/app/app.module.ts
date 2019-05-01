@@ -23,6 +23,7 @@ import { UserIntroComponent } from './user-profile/user-intro/user-intro.compone
 import { UserPostsComponent } from './user-profile/user-posts/user-posts.component';
 import { ImageViewComponent } from './user-profile/image-view/image-view.component';
 import { BannerImageUpdateComponent } from './user-profile/banner-image-update/banner-image-update.component';
+import { AddImageComponent } from './user-profile/add-image/add-image.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -49,6 +50,7 @@ export const firebaseConfig = {
     UserPostsComponent,
     ImageViewComponent,
     BannerImageUpdateComponent,
+    AddImageComponent,
   ],
   imports: [
     BrowserModule,
