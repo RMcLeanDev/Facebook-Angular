@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
     this.authService.logout()
   }
 
-  information(){
+  toProfile(){
     this.router.navigate(['profile', this.uid])
   }
 }

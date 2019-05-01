@@ -5,7 +5,7 @@
       <input #search placeholder="Search">
       <img src="../assets/images/search.png" alt="">
     </div>
-    <div class="user" (click)="information()">
+    <div class="user" (click)="toProfile()">
       <img src="{{(profile | async)?.profileImg}}" alt="">
       <p>{{(profile | async)?.firstname}}</p>
     </div>
